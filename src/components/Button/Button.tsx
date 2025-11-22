@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { ButtonProps } from "./Button.types";
 
 const StyledButton = styled.button<{ disabled?: boolean; color?: string }>`
-  padding: 8px 16px;               /* smaller */
+  padding: 8px 16px; /* smaller */
   border: none;
   border-radius: 8px;
-  font-size: 1.2rem;               /* smaller than 2rem */
+  font-size: 1.2rem; /* smaller than 2rem */
   background-color: ${({ color }) => color || "#a0826d"};
   color: white;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};

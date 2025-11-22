@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 //import logo from "./logo.svg";
 import "./App.css";
 // import Button from "./components/Button";
@@ -16,14 +16,20 @@ import "./App.css";
 // import TableFooter from "./components/Table/TableFooter";
 import BasicInfo from "./sections/BasicInfo/BasicInfo";
 import Work from "./sections/Work/Work";
+import Skills from "./sections/Skills/Skills";
 
 function App() {
   return (
     <div className="App">
       <BasicInfo />
-      <Work />
-    </div>
+      <section id="work">
+        <Work />
+      </section>
 
+      <section id="skills">
+        <Skills />
+      </section>
+    </div>
   );
 }
 

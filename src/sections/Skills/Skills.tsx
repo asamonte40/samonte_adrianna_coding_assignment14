@@ -1,10 +1,19 @@
 import React from "react";
+import styled from "styled-components";
 import Text from "../../components/Text";
 import Table from "../../components/Table";
 import TableHeader from "../../components/Table/TableHeader";
 import TableRow from "../../components/Table/TableRow";
 import TableCell from "../../components/Table/TableCell";
 import TableFooter from "../../components/Table/TableFooter";
+
+const TablesContainer = styled.div`
+  display: flex;
+  gap: 2rem; // space between tables
+  flex-wrap: wrap; // wraps on smaller screens
+  justify-content: center;
+  margin-top: 2rem;
+`;
 
 const Skills = () => {
   const languagesAndFrameworks = [
@@ -22,7 +31,7 @@ const Skills = () => {
     { skill: "VS Code", level: "Proficient" },
     { skill: "phpMyAdmin", level: "Proficient" },
     { skill: "Figma", level: "Proficient" },
-    { skill: "Postman", level: "Proficient" },
+    { skill: "Canva", level: "Proficient" },
     { skill: "XAMPP", level: "Proficient" },
   ];
 
@@ -34,8 +43,40 @@ const Skills = () => {
     { skill: "Attention to Detail", level: "Strong" },
   ];
 
+  const renderTable = (
+    title: string,
+    data: { skill: string; level: string }[],
+    skillLabel = "Skill",
+    levelLabel = "Level",
+  ) => (
+    <div>
+      <Text size="large" color="#6d5c4a" style={{ marginBottom: "0.5rem" }}>
+        {title}
+      </Text>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableCell>{skillLabel}</TableCell>
+            <TableCell>{levelLabel}</TableCell>
+          </TableRow>
+        </TableHeader>
+
+        {data.map((item, i) => (
+          <TableRow key={i}>
+            <TableCell>{item.skill}</TableCell>
+            <TableCell>{item.level}</TableCell>
+          </TableRow>
+        ))}
+
+        <TableFooter>
+          <TableCell colSpan={2}>Total: {data.length}</TableCell>
+        </TableFooter>
+      </Table>
+    </div>
+  );
+
   return (
-    <div style={{ maxWidth: "900px", margin: "3rem auto", padding: "1rem" }}>
+    <div style={{ maxWidth: "1200px", margin: "3rem auto", padding: "1rem" }}>
       <Text size="large" color="#3d2f24">
         Skills
       </Text>
@@ -45,76 +86,11 @@ const Skills = () => {
         in web development.
       </Text>
 
-      {/* Languages / Frameworks */}
-      <Text size="large" color="#6d5c4a" style={{ marginTop: "2rem" }}>
-        Languages & Frameworks
-      </Text>
-
-      <Table>
-        <TableHeader>
-          <TableCell>Skill</TableCell>
-          <TableCell>Level</TableCell>
-        </TableHeader>
-
-        {languagesAndFrameworks.map((item, i) => (
-          <TableRow key={i}>
-            <TableCell>{item.skill}</TableCell>
-            <TableCell>{item.level}</TableCell>
-          </TableRow>
-        ))}
-
-        <TableFooter>
-          <TableCell colSpan={2}>
-            Total: {languagesAndFrameworks.length} skills
-          </TableCell>
-        </TableFooter>
-      </Table>
-
-      {/* Tools */}
-      <Text size="large" color="#6d5c4a" style={{ marginTop: "2rem" }}>
-        Tools
-      </Text>
-
-      <Table>
-        <TableHeader>
-          <TableCell>Tool</TableCell>
-          <TableCell>Level</TableCell>
-        </TableHeader>
-
-        {tools.map((item, i) => (
-          <TableRow key={i}>
-            <TableCell>{item.skill}</TableCell>
-            <TableCell>{item.level}</TableCell>
-          </TableRow>
-        ))}
-
-        <TableFooter>
-          <TableCell colSpan={2}>Total: {tools.length} tools</TableCell>
-        </TableFooter>
-      </Table>
-
-      {/* Soft Skills */}
-      <Text size="large" color="#6d5c4a" style={{ marginTop: "2rem" }}>
-        Soft Skills
-      </Text>
-
-      <Table>
-        <TableHeader>
-          <TableCell>Skill</TableCell>
-          <TableCell>Strength</TableCell>
-        </TableHeader>
-
-        {softSkills.map((item, i) => (
-          <TableRow key={i}>
-            <TableCell>{item.skill}</TableCell>
-            <TableCell>{item.level}</TableCell>
-          </TableRow>
-        ))}
-
-        <TableFooter>
-          <TableCell colSpan={2}>Total: {softSkills.length} soft skills</TableCell>
-        </TableFooter>
-      </Table>
+      <TablesContainer>
+        {renderTable("Languages & Frameworks", languagesAndFrameworks)}
+        {renderTable("Tools", tools, "Tool")}
+        {renderTable("Soft Skills", softSkills, "Skill", "Strength")}
+      </TablesContainer>
     </div>
   );
 };

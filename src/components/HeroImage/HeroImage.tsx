@@ -26,8 +26,7 @@ const Overlay = styled.div<{ overlayColor?: string }>`
   left: 0;
   width: 100%;
   height: 100%;
-  background: ${({ overlayColor }) =>
-    overlayColor || "transparent"};
+  background: ${({ overlayColor }) => overlayColor || "transparent"};
   display: flex;
   align-items: center;
   justify-content: center;

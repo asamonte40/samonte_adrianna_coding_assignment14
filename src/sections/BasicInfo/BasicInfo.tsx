@@ -49,10 +49,10 @@ const StyledButton = styled(Button)`
   background-color: #a0826d; /* <-- CHANGE THIS TO ANY COLOR YOU WANT */
   color: white;
 
-  padding: 0.4rem 1rem;      /* smaller button */
-  font-size: 0.85rem;        /* smaller text */
+  padding: 0.4rem 1rem; /* smaller button */
+  font-size: 0.85rem; /* smaller text */
   border-radius: 6px;
-  min-width: 100px;          /* smaller width */
+  min-width: 100px; /* smaller width */
   text-align: center;
 
   &:hover {
@@ -60,10 +60,27 @@ const StyledButton = styled(Button)`
   }
 `;
 
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+
 const BasicInfo = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
-      <HeroImage src="/portfolioheroimage1.png" alt="portfolioheroimage" height="600px" />
+      <HeroImage
+        src="/portfolioheroimage1.png"
+        alt="portfolioheroimage"
+        height="600px"
+      />
 
       <Container>
         <Name>Adrianna Samonte</Name>
@@ -71,29 +88,41 @@ const BasicInfo = () => {
 
         <InfoWrapper>
           <Text size="medium" color="#4a3f35">
-            I'm a student currently studying in the <strong>Full-Stack Web Development</strong> program at
-            <strong> Red River College Polytechnic</strong>, where I’m building strong foundations in
-            front-end and back-end development.
+            I'm a student currently studying in the{" "}
+            <strong>Full-Stack Web Development</strong> program at
+            <strong> Red River College Polytechnic</strong>, where I’m building
+            strong foundations in front-end and back-end development.
           </Text>
 
           <Text size="medium" color="#4a3f35" style={{ marginTop: "0.75rem" }}>
-            I'm passionate about creating clean, modern, and intuitive websites that focus on accessibility,
-            user experience, and design consistency. I enjoy bringing ideas to life and learning the “why”
+            I'm passionate about creating clean, modern, and intuitive websites
+            that focus on accessibility, user experience, and design
+            consistency. I enjoy bringing ideas to life and learning the “why”
             behind the code I write.
           </Text>
 
           <Text size="medium" color="#4a3f35" style={{ marginTop: "0.75rem" }}>
-            I'm especially interested in front-end development, UI/UX design, and building responsive
-            layouts that feel smooth and professional. Every new project helps me improve my skills and
-            explore better ways to build engaging digital experiences.
+            I'm especially interested in front-end development, UI/UX design,
+            and building responsive layouts that feel smooth and professional.
+            Every new project helps me improve my skills and explore better ways
+            to build engaging digital experiences.
           </Text>
         </InfoWrapper>
 
         <ButtonRow>
-          <StyledButton label="Work" />
-          <StyledButton label="Skills" />
-          <StyledButton label="Resources" />
-          <StyledButton label="Developer Setup" />
+          <StyledButton onClick={() => scrollToSection("work")} label="Work" />
+          <StyledButton
+            onClick={() => scrollToSection("skills")}
+            label="Skills"
+          />
+          <StyledButton
+            onClick={() => scrollToSection("resources")}
+            label="Resources"
+          />
+          <StyledButton
+            onClick={() => scrollToSection("developer-setup")}
+            label="Developer Setup"
+          />
         </ButtonRow>
       </Container>
     </>

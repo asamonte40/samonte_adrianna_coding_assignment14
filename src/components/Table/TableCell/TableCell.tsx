@@ -10,8 +10,16 @@ const StyledCell = styled.td<{ disabled?: boolean }>`
   opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
 `;
 
-const TableCell: React.FC<TableCellProps> = ({ children, disabled }) => {
-  return <StyledCell disabled={disabled}>{children}</StyledCell>;
+const TableCell: React.FC<TableCellProps> = ({
+  children,
+  disabled,
+  colSpan,
+}) => {
+  return (
+    <StyledCell disabled={disabled} colSpan={colSpan}>
+      {children}
+    </StyledCell>
+  );
 };
 
 export default TableCell;
