@@ -1,0 +1,327 @@
+<!--------f-----------
+
+    Project 4
+    Name: Adrianna Samonte
+    Date: April 18, 2025
+    Description: Project 4 Index HTML
+
+--------------------->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heaven Scent</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div id="header">
+          <!-- header -->
+          <a href="#"><img src="images/logo2.png" id="logo" alt="logo" /></a>
+
+          <input type="checkbox" id="menu-toggle" />
+          <h1><label for="menu-toggle" id="menu-button">☰</label></h1>
+
+          <div id="nav-container">
+            <form action="shop.html" method="get" id="searchbar">
+              <img src="images/search.png" id="searchlogo" alt="searchlogo" />
+              <input
+                id="search"
+                name="search"
+                type="text"
+                placeholder="Search"
+              />
+            </form>
+
+            <nav id="navbar">
+              <ul>
+                <li><a id="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop for Flowers!</a></li>
+                <li>
+                  <a href="#" id="cart-icon">
+                    <img
+                      src="images/cartlogo.png"
+                      id="cartlogo"
+                      alt="cartlogo"
+                    />
+                    <span id="cart-count">0</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <div id="headerbackground">
+        <img src="images/header.jpg" id="headerphoto" alt="header" />
+        <div id="headerinfo">
+          <h1 id="mainheading">Send Appreciation</h1>
+          <h2 id="subheading">Make a note and send it to your love one!</h2>
+          <p id="deliveryinfo">Free delivery for local online orders</p>
+          <a href="shop.html" id="shoplink"
+            ><span id="shoptext"><u>SHOP NOW!</u></span></a
+          >
+        </div>
+      </div>
+
+      <!-- Main content -->
+      <section id="content">
+        <div id="num1">
+          <h2>Heaven Scent: A Bouquet Boutique</h2>
+          <p>
+            At Heaven Scent, we turn flowers into heartfelt expressions.
+            Specializing in handcrafted bouquets, we blend artistry and passion
+            to create arrangements that capture life's most meaningful moments.
+            Whether you're celebrating love, sharing joy, or sending comfort,
+            our bouquets are carefully designed to bring smiles and lasting
+            memories.
+          </p>
+          <p>
+            At Heaven Scent, we take pride in every petal, offering our
+            customers:
+          </p>
+          <ul id="benefitlist">
+            <li>
+              <span id="highlight-1">Freshly Handpicked Blooms:</span> Every
+              flower is carefully selected for its vibrancy, fragrance, and
+              freshness. We source our blooms daily to ensure our bouquets
+              radiate life and beauty.
+            </li>
+            <li>
+              <span id="highlight-2">Artistry in Design:</span> Our skilled
+              florists create unique arrangements tailored to your preferences
+              and the occasion. From classic elegance to modern chic, our
+              designs are crafted to impress and delight.
+            </li>
+            <li>
+              <span id="highlight-3">A Personal Touch:</span> We believe every
+              bouquet tells a story. Share your vision with us, and we'll bring
+              it to life with care and attention to detail.
+            </li>
+            <li>
+              <span id="highlight-4">Convenience & Reliability:</span> With
+              hassle-free online ordering and delivery services, expressing your
+              feelings is just a few clicks away. We offer same-day delivery to
+              ensure your bouquet arrives exactly when it matters.
+            </li>
+          </ul>
+          <p>
+            From delicate roses to vibrant lilies and cheerful daisies, Heaven
+            Scent specializes in bouquets that cater to a wide array of
+            occasions. Whether it's a wedding, anniversary, or birthdays, our
+            creations are designed to speak volumes without saying a word. We
+            also offer seasonal bouquets, ensuring our arrangements reflect the
+            beauty of each time of year.
+          </p>
+        </div>
+      </section>
+
+      <!-- most popular products -->
+      <section id="popular-products">
+        <h2>Most Popular Bouquets</h2>
+        <div id="products-container">
+          <!-- Product 1 -->
+          <div id="product-1">
+            <div id="productimage-1">
+              <img src="images/roses.jpg" alt="redroses" />
+            </div>
+            <div id="productinfo-1">
+              <h3>Red Roses</h3>
+              <p>
+                A classic bouquet of elegant red roses symbolizing love and
+                passion.
+              </p>
+              <div id="productfooter-1">
+                <span id="price1">$49.99</span>
+                <button
+                  id="add-to-cart-1"
+                  data-id="1"
+                  data-name="Red Roses"
+                  data-price="49.99"
+                  data-image="images/roses.jpg"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div id="product-2">
+            <div id="productimage-2">
+              <img src="images/orange_tulip.jpg" alt="orangetulips" />
+            </div>
+            <div id="productinfo-2">
+              <h3>Orange Tulips</h3>
+              <p>
+                Vibrant orange tulips that bring warmth and energy to any space.
+              </p>
+              <div id="productfooter-2">
+                <span id="price2">$59.99</span>
+                <button
+                  id="add-to-cart-2"
+                  data-id="2"
+                  data-name="Orange Tulips"
+                  data-price="59.99"
+                  data-image="images/orange_tulip.jpg"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div id="product-3">
+            <div id="productimage-3">
+              <img src="images/gerbera_daisy.jpg" alt="gerberadaisies" />
+            </div>
+            <div id="productinfo-3">
+              <h3>Gerbera Daisies</h3>
+              <p>
+                Cheerful and colorful daisies that symbolize innocence and
+                purity.
+              </p>
+              <div id="productfooter-3">
+                <span id="price3">$69.99</span>
+                <button
+                  id="add-to-cart-3"
+                  data-id="3"
+                  data-name="Gerbera Daisies"
+                  data-price="69.99"
+                  data-image="images/gerbera_daisy.jpg"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer -->
+      <footer>
+        <div id="footer-container">
+          <div id="footer-section-1">
+            <h3>Heaven Scent</h3>
+            <p>Turning flowers into heartfelt expressions since 2010.</p>
+            <p id="hours">
+              Monday-Friday: 9:00 AM - 7:00 PM Saturday: 10:00 AM - 6:00 PM
+              Sunday: 12:00 PM - 5:00 PM
+            </p>
+          </div>
+          <div id="footer-section-2">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/89/77/41/8977415d71443f6f9348e7301a8ff449.jpg"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/14/20/fd/1420fdb2c1b84a55bc9a61e3050b0fa5.jpg"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div id="footer-section-3">
+            <h3>Customer Service</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/f7/d0/55/f7d055d76e8d42f2c4047be59723a792.jpg"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/08/4f/f9/084ff971c72288bb8355f40e3637c816.jpg"
+                  >Delivery Information</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/45/eb/e7/45ebe7bcba5f8d10c790c4441801a106.jpg"
+                  >Returns Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/e3/03/4d/e3034d25f1f422392a52ff7762770e81.jpg"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div id="footer-section-4">
+            <h3>Contact Us</h3>
+            <ul id="contact-info">
+              <li>
+                <img src="images/location.png" alt="Address" />1022 Petal
+                Street, Blossom City, BC1 127
+              </li>
+              <li><img src="images/phone.png" alt="Phone" />(204) XXX-XXXX</li>
+              <li>
+                <img src="images/email.png" alt="Email" />heavenscent@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="footer-bottom">
+          <p>&copy; 2025 Heaven Scent. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <!-- Side Cart -->
+      <div id="side-cart">
+        <div id="side-cart-header">
+          <h3>Your Cart</h3>
+          <button id="close-cart">
+            <img src="images/close.png" id="closelogo" alt="closelogo" />
+          </button>
+        </div>
+        <div id="side-cart-items">
+          <!-- cart items will be added here -->
+        </div>
+        <div id="side-cart-empty">
+          <p>Your cart is empty</p>
+          <p>Add some beautiful flowers!</p>
+        </div>
+        <div id="side-cart-summary">
+          <div id="summary-row-1">
+            <span>Subtotal:</span>
+            <span id="side-cart-subtotal">$0.00</span>
+          </div>
+          <div id="summary-row-2">
+            <span>Tax (5%):</span>
+            <span id="side-cart-tax">$0.00</span>
+          </div>
+          <div id="summary-row-3">
+            <span>Shipping:</span>
+            <span id="side-cart-shipping">$0.00</span>
+          </div>
+          <div id="summary-row-4">
+            <span>Total:</span>
+            <span id="side-cart-total">$0.00</span>
+          </div>
+        </div>
+        <div id="side-cart-footer">
+          <a href="checkout.html" id="checkout-btn">Proceed to Checkout</a>
+          <button id="continue-shopping">Continue Shopping</button>
+        </div>
+      </div>
+      <!-- Overlay for when cart is open -->
+      <div id="cart-overlay"></div>
+    </main>
+
+    <script src="shop.js"></script>
+  </body>
+</html>

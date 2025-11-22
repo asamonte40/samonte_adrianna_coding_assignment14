@@ -1,0 +1,405 @@
+<!--------f-----------
+
+    Project 4
+    Name: Adrianna Samonte
+    Date: April 20, 2025
+    Description: Project 4 Checkout HTML
+
+--------------------->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Heaven Scent</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div id="header">
+          <!-- header -->
+          <a href="index.html"
+            ><img src="images/logo2.png" id="logo" alt="logo"
+          /></a>
+
+          <input type="checkbox" id="menu-toggle" />
+          <h1><label for="menu-toggle" id="menu-button">☰</label></h1>
+
+          <div id="nav-container">
+            <form action="shop.html" method="get" id="searchbar">
+              <img src="images/search.png" id="searchlogo" alt="searchlogo" />
+              <input
+                id="search"
+                name="search"
+                type="text"
+                placeholder="Search"
+              />
+            </form>
+
+            <nav id="navbar">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop for Flowers!</a></li>
+                <li>
+                  <a href="#" id="cart-icon">
+                    <img
+                      src="images/cartlogo.png"
+                      id="cartlogo"
+                      alt="cartlogo"
+                    />
+                    <span id="cart-count">0</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <div id="headerbackground">
+        <img src="images/header3.png" id="headerphoto" alt="header" />
+      </div>
+
+      <!-- content -->
+      <section id="checkout-content">
+        <div id="checkout-title">
+          <h2>Checkout</h2>
+          <p>
+            Complete your purchase by providing your shipping and payment
+            details
+          </p>
+        </div>
+
+        <!-- checkout -->
+        <div id="checkout-container">
+          <div id="checkout-form-container">
+            <h3>Shipping Information</h3>
+            <form
+              id="checkoutForm"
+              action="https://www.stungeye.com/school/webdev/thankyou.php"
+              method="post"
+            >
+              <div id="shipping-info">
+                <div id="form-row-1">
+                  <div id="form-group-1">
+                    <label for="fullname">Full Name</label>
+                    <!-- name -->
+                    <input
+                      type="text"
+                      id="fullname"
+                      name="fullname"
+                      placeholder="firstname, lastname"
+                    />
+                    <p id="fullname_error">* Required field</p>
+                  </div>
+                </div>
+
+                <div id="form-row-2">
+                  <div id="form-group-2">
+                    <label for="email">Email Address</label>
+                    <!-- email -->
+                    <input
+                      type="text"
+                      id="email"
+                      name="email"
+                      placeholder="info@gmail.com"
+                    />
+                    <p id="email_error">* Required field</p>
+                    <p id="emailformat_error">* Invalid email address</p>
+                  </div>
+                </div>
+
+                <div id="form-row-3">
+                  <div id="form-group-3">
+                    <label for="phone">Phone Number</label>
+                    <!-- phone number -->
+                    <input
+                      type="text"
+                      id="phone"
+                      name="phone"
+                      placeholder="204 XXX XXXX"
+                    />
+                    <p id="phone_error">* Required field</p>
+                    <p id="phoneformat_error">* Invalid phone number</p>
+                  </div>
+                </div>
+
+                <div id="form-row-4">
+                  <div id="form-group-4">
+                    <!-- address -->
+                    <label for="address">Street Address</label>
+                    <input type="text" id="address" name="address" />
+                    <p id="address_error">* Required field</p>
+                  </div>
+                </div>
+
+                <div id="form-row-5">
+                  <div id="form-group-5">
+                    <label for="city">City</label>
+                    <!-- city -->
+                    <input type="text" id="city" name="city" />
+                    <p id="city_error">* Required field</p>
+                  </div>
+                </div>
+
+                <div id="form-row-6">
+                  <div id="form-group-6">
+                    <label for="province">Province</label>
+                    <!-- province -->
+                    <select id="province" name="province">
+                      <option value="AB">Alberta</option>
+                      <option value="BC">British Columbia</option>
+                      <option value="MB">Manitoba</option>
+                      <option value="NB">New Brunswick</option>
+                      <option value="NL">Newfoundland and Labrador</option>
+                      <option value="NS">Nova Scotia</option>
+                      <option value="ON">Ontario</option>
+                      <option value="PE">Prince Edward Island</option>
+                      <option value="QC">Quebec</option>
+                      <option value="SK">Saskatchewan</option>
+                      <option value="NT">Northwest Territories</option>
+                      <option value="NU">Nunavut</option>
+                      <option value="YT">Yukon</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div id="form-row-7">
+                  <div id="form-group-7">
+                    <label for="postal">Postal Code</label>
+                    <!-- postal -->
+                    <input
+                      type="text"
+                      id="postal"
+                      name="postal"
+                      placeholder="XXX XXX"
+                    />
+                    <p id="postal_error">* Required field</p>
+                    <p id="postalformat_error">
+                      * Invalid postal code format (A1A 1A1)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- payment -->
+              <h3 id="payment-heading">Payment Information</h3>
+              <div id="payment-info">
+                <div id="form-row-8">
+                  <div id="form-group-8">
+                    <label>Card Type</label>
+                    <!-- card type -->
+                    <div id="card-types">
+                      <div id="radio-option-visa">
+                        <input
+                          type="radio"
+                          id="visa"
+                          name="cardtype"
+                          value="visa"
+                        />
+
+                        <label for="visa">Visa</label>
+                      </div>
+
+                      <div id="radio-option-mastercard">
+                        <input
+                          type="radio"
+                          id="mastercard"
+                          name="cardtype"
+                          value="mastercard"
+                        />
+                        <label for="mastercard">Mastercard</label>
+                      </div>
+
+                      <div id="radio-option-amex">
+                        <input
+                          type="radio"
+                          id="amex"
+                          name="cardtype"
+                          value="amex"
+                        />
+                        <label for="amex">American Express</label>
+                      </div>
+                    </div>
+                    <p id="cardtype_error">* Please select a card type</p>
+                  </div>
+                </div>
+
+                <div id="form-row-9">
+                  <div id="form-group-9">
+                    <label for="cardname">Name on Card</label>
+                    <!-- card name -->
+                    <input type="text" id="cardname" name="cardname" />
+                    <p id="cardname_error">* Required field</p>
+                  </div>
+                </div>
+
+                <div id="form-row-10">
+                  <div id="form-group-10">
+                    <label for="cardnumber">Card Number</label>
+                    <!-- card number -->
+                    <input type="text" id="cardnumber" name="cardnumber" />
+                    <p id="cardnumber_error">* Required field</p>
+                    <p id="cardnumberformat_error">
+                      * Invalid card number (must be 10 digits)
+                    </p>
+                    <p id="invalidcard_error">* Invalid card number</p>
+                  </div>
+                </div>
+
+                <div id="form-row-11">
+                  <div id="form-group-11">
+                    <label for="month">Expiry Date</label>
+                    <!-- expiry date -->
+                    <select id="month" name="month" aria-label="expirymonth">
+                      <option value="">- Month -</option>
+                      <option value="1">January</option>
+                      <option value="2">February</option>
+                      <option value="3">March</option>
+                      <option value="4">April</option>
+                      <option value="5">May</option>
+                      <option value="6">June</option>
+                      <option value="7">July</option>
+                      <option value="8">August</option>
+                      <option value="9">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
+                    <select id="year" name="year" aria-label="expiryyear">
+                      <option value="">- Year -</option>
+                    </select>
+                    <p id="month_error">* Please select a month</p>
+                    <p id="year_error">* Please select a year</p>
+                    <p id="expiry_error">* Invalid expiry date</p>
+                  </div>
+                </div>
+
+                <div id="form-row-12">
+                  <div id="form-group-12">
+                    <label for="cvv">CVV</label>
+                    <!-- cvv -->
+                    <input type="text" id="cvv" name="cvv" />
+                    <p id="cvv_error">* Required field</p>
+                    <p id="cvvformat_error">* CVV must be 3-4 digits</p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="form-buttons">
+                <button type="submit" id="place-order-btn">Place Order</button>
+                <a href="shop.html" id="back-to-shop-btn">Back to Shop</a>
+              </div>
+            </form>
+          </div>
+
+          <div id="order-summary">
+            <h3>Order Summary</h3>
+            <div id="order-summary-items">
+              <!-- order items will be shown here -->
+            </div>
+            <div id="order-summary-totals">
+              <div id="summary-row-1">
+                <span>Subtotal:</span>
+                <span id="order-subtotal">$0.00</span>
+              </div>
+              <div id="summary-row-2">
+                <span>Tax (5%):</span>
+                <span id="order-tax">$0.00</span>
+              </div>
+              <div id="summary-row-3">
+                <span>Shipping:</span>
+                <span id="order-shipping">$0.00</span>
+              </div>
+              <div id="summary-row-4">
+                <span>Total:</span>
+                <span id="order-total">$0.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer -->
+      <footer>
+        <div id="footer-container">
+          <div id="footer-section-1">
+            <h3>Heaven Scent</h3>
+            <p>Turning flowers into heartfelt expressions since 2010.</p>
+            <p id="hours">
+              Monday-Friday: 9:00 AM - 7:00 PM Saturday: 10:00 AM - 6:00 PM
+              Sunday: 12:00 PM - 5:00 PM
+            </p>
+          </div>
+          <div id="footer-section-2">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/89/77/41/8977415d71443f6f9348e7301a8ff449.jpg"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/14/20/fd/1420fdb2c1b84a55bc9a61e3050b0fa5.jpg"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div id="footer-section-3">
+            <h3>Customer Service</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/f7/d0/55/f7d055d76e8d42f2c4047be59723a792.jpg"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/08/4f/f9/084ff971c72288bb8355f40e3637c816.jpg"
+                  >Delivery Information</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/45/eb/e7/45ebe7bcba5f8d10c790c4441801a106.jpg"
+                  >Returns Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/e3/03/4d/e3034d25f1f422392a52ff7762770e81.jpg"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div id="footer-section-4">
+            <h3>Contact Us</h3>
+            <ul id="contact-info">
+              <li>
+                <img src="images/location.png" alt="Address" />1022 Petal
+                Street, Blossom City, BC1 127
+              </li>
+              <li><img src="images/phone.png" alt="Phone" />(204) XXX-XXXX</li>
+              <li>
+                <img src="images/email.png" alt="Email" />heavenscent@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="footer-bottom">
+          <p>&copy; 2025 Heaven Scent. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="checkout.js"></script>
+  </body>
+</html>

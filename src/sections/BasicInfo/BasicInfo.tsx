@@ -2,20 +2,8 @@ import React from "react";
 import HeroImage from "../../components/HeroImage";
 import Button from "../../components/Button";
 import Text from "../../components/Text";
+import Card from "../../components/Card";
 import styled from "styled-components";
-
-const Container = styled.div`
-  position: relative;
-  margin: -60px auto 0;
-  background-color: #fff;
-  border-radius: 18px;
-  padding: 3rem 2rem;
-  max-width: 1000px;
-  text-align: center;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.18);
-  color: #4a3f35;
-  z-index: 2;
-`;
 
 const Name = styled.h1`
   font-size: 2.75rem;
@@ -68,12 +56,6 @@ const scrollToSection = (id: string) => {
 };
 
 const BasicInfo = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   return (
     <>
       <HeroImage
@@ -82,7 +64,7 @@ const BasicInfo = () => {
         height="600px"
       />
 
-      <Container>
+      <Card color="white" width="1000px">
         <Name>Adrianna Samonte</Name>
         <Subtitle>Full-Stack Web Developer • Student</Subtitle>
 
@@ -124,7 +106,7 @@ const BasicInfo = () => {
             label="Developer Setup"
           />
         </ButtonRow>
-      </Container>
+      </Card>
     </>
   );
 };

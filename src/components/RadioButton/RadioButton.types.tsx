@@ -3,4 +3,6 @@ export interface RadioButtonProps {
   options: string[];
   disabled?: boolean;
   label?: string;
+  selected?: string; // currently selected value
+  onChange?: (value: string) => void;
 }

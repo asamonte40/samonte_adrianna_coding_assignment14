@@ -1,0 +1,425 @@
+<!--------f-----------
+
+    Project 4
+    Name: Adrianna Samonte
+    Date: April 20, 2025
+    Description: Project 4 Shop HTML
+
+--------------------->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop - Heaven Scent</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div id="header">
+          <!-- header -->
+          <a href="index.html"
+            ><img src="images/logo2.png" id="logo" alt="logo"
+          /></a>
+
+          <input type="checkbox" id="menu-toggle" />
+          <h1><label for="menu-toggle" id="menu-button">☰</label></h1>
+
+          <div id="nav-container">
+            <form
+              action="https://www.google.com/search"
+              method="get"
+              id="searchbar"
+            >
+              <img src="images/search.png" id="searchlogo" alt="searchlogo" />
+              <input
+                id="search"
+                name="search"
+                type="text"
+                placeholder="Search"
+              />
+            </form>
+
+            <nav id="navbar">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a id="active" href="shop.html">Shop for Flowers!</a></li>
+                <li>
+                  <a href="#" id="cart-icon">
+                    <img
+                      src="images/cartlogo.png"
+                      id="cartlogo"
+                      alt="cartlogo"
+                    />
+                    <span id="cart-count">0</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <div id="headerbackground">
+        <img src="images/header2.jpg" id="headerphoto" alt="header" />
+      </div>
+
+      <section id="shop-content">
+        <div id="shop-title">
+          <h2>Our Beautiful Bouquets</h2>
+          <p>
+            Browse our selection of handcrafted floral arrangements for every
+            occasion
+          </p>
+        </div>
+        <div id="products-container">
+          <!-- Product 1 -->
+          <div id="product-1">
+            <div id="productimage-1">
+              <img src="images/roses.jpg" alt="redroses" />
+            </div>
+            <div id="productinfo-1">
+              <h3>Red Roses</h3>
+              <p>
+                A classic bouquet of elegant red roses symbolizing love and
+                passion.
+              </p>
+              <div id="productfooter-1">
+                <span id="price1">$49.99</span>
+                <button
+                  id="add-to-cart-1"
+                  data-id="1"
+                  data-name="Red Roses"
+                  data-price="49.99"
+                  data-image="images/roses.jpg"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div id="product-2">
+            <div id="productimage-2">
+              <img src="images/orange_tulip.jpg" alt="orangetulips" />
+            </div>
+            <div id="productinfo-2">
+              <h3>Orange Tulips</h3>
+              <p>
+                Vibrant orange tulips that bring warmth and energy to any space.
+              </p>
+              <div id="productfooter-2">
+                <span id="price2">$59.99</span>
+                <button
+                  id="add-to-cart-2"
+                  data-id="2"
+                  data-name="Orange Tulips"
+                  data-price="59.99"
+                  data-image="images/orange_tulip.jpg"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div id="product-3">
+            <div id="productimage-3">
+              <img src="images/gerbera_daisy.jpg" alt="gerberadaisies" />
+            </div>
+            <div id="productinfo-3">
+              <h3>Gerbera Daisies</h3>
+              <p>
+                Cheerful and colorful daisies that symbolize innocence and
+                purity.
+              </p>
+              <div id="productfooter-3">
+                <span id="price3">$69.99</span>
+                <button
+                  id="add-to-cart-3"
+                  data-id="3"
+                  data-name="Gerbera Daisies"
+                  data-price="69.99"
+                  data-image="images/gerbera_daisy.jpg"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div id="product-4">
+            <div id="productimage-4">
+              <img src="images/pink_rose.jpg" alt="pinkroses" />
+            </div>
+            <div id="productinfo-4">
+              <h3>Pink Roses</h3>
+              <p>
+                Delicate pink roses expressing gratitude, admiration, and joy.
+              </p>
+              <div id="productfooter-4">
+                <span id="price4">$54.99</span>
+                <button
+                  id="add-to-cart-4"
+                  data-id="4"
+                  data-name="Pink Roses"
+                  data-price="54.99"
+                  data-image="images/pink_rose.jpg"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div id="product-5">
+            <div id="productimage-5">
+              <img src="images/pink_tulip.jpg" alt="pinktulips" />
+            </div>
+            <div id="productinfo-5">
+              <h3>Pink Tulips</h3>
+              <p>Elegant pink tulips representing royalty and admiration.</p>
+              <div id="productfooter-5">
+                <span id="price5">$62.99</span>
+                <button
+                  id="add-to-cart-5"
+                  data-id="5"
+                  data-name="Pink Tulips"
+                  data-price="62.99"
+                  data-image="images/pink_tulip.jpg"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div id="product-6">
+            <div id="productimage-6">
+              <img src="images/white_daisy.jpg" alt="whitedaisies" />
+            </div>
+            <div id="productinfo-6">
+              <h3>White Daisies</h3>
+              <p>
+                Pure white daisies symbolizing innocence and new beginnings.
+              </p>
+              <div id="productfooter-6">
+                <span id="price6">$64.99</span>
+                <button
+                  id="add-to-cart-6"
+                  data-id="6"
+                  data-name="White Daisies"
+                  data-price="64.99"
+                  data-image="images/white_daisy.jpg"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 7 -->
+          <div id="product-7">
+            <div id="productimage-7">
+              <img src="images/yellow_rose.jpg" alt="yellowroses" />
+            </div>
+            <div id="productinfo-7">
+              <h3>Yellow Roses</h3>
+              <p>Bright yellow roses representing friendship and joy.</p>
+              <div id="productfooter-7">
+                <span id="price7">$49.99</span>
+                <button
+                  id="add-to-cart-7"
+                  data-id="7"
+                  data-name="Yellow Roses"
+                  data-price="49.99"
+                  data-image="images/yellow_rose.jpg"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 8 -->
+          <div id="product-8">
+            <div id="productimage-8">
+              <img src="images/yellow_tulip.jpg" alt="yellowtulips" />
+            </div>
+            <div id="productinfo-8">
+              <h3>Yellow Tulips</h3>
+              <p>
+                Light yellow tulips that declare perfect happiness and kindness.
+              </p>
+              <div id="productfooter-8">
+                <span id="price8">$58.99</span>
+                <button
+                  id="add-to-cart-8"
+                  data-id="8"
+                  data-name="Yellow Tulips"
+                  data-price="58.99"
+                  data-image="images/yellow_tulip.jpg"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 9 -->
+          <div id="product-9">
+            <div id="productimage-9">
+              <img src="images/mixed_flower.jpg" alt="mixedflowers" />
+            </div>
+            <div id="productinfo-9">
+              <h3>Mixed Flowers</h3>
+              <p>A colorful mix of flowers to brighten any room or occasion.</p>
+              <div id="productfooter-9">
+                <span id="price9">$72.99</span>
+                <button
+                  id="add-to-cart-9"
+                  data-id="9"
+                  data-name="Mixed Flowers"
+                  data-price="72.99"
+                  data-image="images/mixed_flower.jpg"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="view-all">
+          <a href="#" id="viewbutton">Back to Top</a>
+        </div>
+      </section>
+
+      <!-- footer -->
+      <footer>
+        <div id="footer-container">
+          <div id="footer-section-1">
+            <h3>Heaven Scent</h3>
+            <p>Turning flowers into heartfelt expressions since 2010.</p>
+            <p id="hours">
+              Monday-Friday: 9:00 AM - 7:00 PM Saturday: 10:00 AM - 6:00 PM
+              Sunday: 12:00 PM - 5:00 PM
+            </p>
+          </div>
+          <div id="footer-section-2">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/89/77/41/8977415d71443f6f9348e7301a8ff449.jpg"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/14/20/fd/1420fdb2c1b84a55bc9a61e3050b0fa5.jpg"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div id="footer-section-3">
+            <h3>Customer Service</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/f7/d0/55/f7d055d76e8d42f2c4047be59723a792.jpg"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/08/4f/f9/084ff971c72288bb8355f40e3637c816.jpg"
+                  >Delivery Information</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/45/eb/e7/45ebe7bcba5f8d10c790c4441801a106.jpg"
+                  >Returns Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://i.pinimg.com/736x/e3/03/4d/e3034d25f1f422392a52ff7762770e81.jpg"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div id="footer-section-4">
+            <h3>Contact Us</h3>
+            <ul id="contact-info">
+              <li>
+                <img src="images/location.png" alt="Address" />1022 Petal
+                Street, Blossom City, BC1 127
+              </li>
+              <li><img src="images/phone.png" alt="Phone" />(204) XXX-XXXX</li>
+              <li>
+                <img src="images/email.png" alt="Email" />heavenscent@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="footer-bottom">
+          <p>&copy; 2025 Heaven Scent. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <!-- Side Cart -->
+      <div id="side-cart">
+        <div id="side-cart-header">
+          <h3>Your Cart</h3>
+          <button id="close-cart">
+            <img src="images/close.png" id="closelogo" alt="closelogo" />
+          </button>
+        </div>
+        <div id="side-cart-items">
+          <!-- Cart items will be added here dynamically -->
+        </div>
+        <div id="side-cart-empty">
+          <p>Your cart is empty</p>
+          <p>Add some beautiful flowers!</p>
+        </div>
+        <div id="side-cart-summary">
+          <div id="summary-row-1">
+            <span>Subtotal:</span>
+            <span id="side-cart-subtotal">$0.00</span>
+          </div>
+          <div id="summary-row-2">
+            <span>Tax (5%):</span>
+            <span id="side-cart-tax">$0.00</span>
+          </div>
+          <div id="summary-row-3">
+            <span>Shipping:</span>
+            <span id="side-cart-shipping">$0.00</span>
+          </div>
+          <div id="summary-row-4">
+            <span>Total:</span>
+            <span id="side-cart-total">$0.00</span>
+          </div>
+        </div>
+        <div id="side-cart-footer">
+          <a href="checkout.html" id="checkout-btn">Proceed to Checkout</a>
+          <button id="continue-shopping">Continue Shopping</button>
+        </div>
+      </div>
+      <!-- Overlay for when cart is open -->
+      <div id="cart-overlay"></div>
+    </main>
+    <script src="shop.js"></script>
+  </body>
+</html>

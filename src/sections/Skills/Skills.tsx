@@ -1,21 +1,32 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
 import Text from "../../components/Text";
+import Card from "../../components/Card";
+import RadioButton from "../../components/RadioButton";
 import Table from "../../components/Table";
 import TableHeader from "../../components/Table/TableHeader";
 import TableRow from "../../components/Table/TableRow";
 import TableCell from "../../components/Table/TableCell";
 import TableFooter from "../../components/Table/TableFooter";
+import styled from "styled-components";
 
-const TablesContainer = styled.div`
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 1rem;
+  text-align: center;
+`;
+
+const RadioGroup = styled.div`
   display: flex;
-  gap: 2rem; // space between tables
-  flex-wrap: wrap; // wraps on smaller screens
   justify-content: center;
-  margin-top: 2rem;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
 `;
 
 const Skills = () => {
+  const [selectedTable, setSelectedTable] = useState("languages");
+
   const languagesAndFrameworks = [
     { skill: "HTML5", level: "Advanced" },
     { skill: "CSS3 / SCSS", level: "Advanced" },
@@ -49,7 +60,7 @@ const Skills = () => {
     skillLabel = "Skill",
     levelLabel = "Level",
   ) => (
-    <div>
+    <>
       <Text size="large" color="#6d5c4a" style={{ marginBottom: "0.5rem" }}>
         {title}
       </Text>
@@ -72,11 +83,11 @@ const Skills = () => {
           <TableCell colSpan={2}>Total: {data.length}</TableCell>
         </TableFooter>
       </Table>
-    </div>
+    </>
   );
 
   return (
-    <div style={{ maxWidth: "1200px", margin: "3rem auto", padding: "1rem" }}>
+    <Container>
       <Text size="large" color="#3d2f24">
         Skills
       </Text>
@@ -86,12 +97,36 @@ const Skills = () => {
         in web development.
       </Text>
 
-      <TablesContainer>
-        {renderTable("Languages & Frameworks", languagesAndFrameworks)}
-        {renderTable("Tools", tools, "Tool")}
-        {renderTable("Soft Skills", softSkills, "Skill", "Strength")}
-      </TablesContainer>
-    </div>
+      {/* Radio buttons to switch tables */}
+      <RadioGroup>
+        <RadioButton
+          name="skills"
+          options={["Languages & Frameworks", "Tools", "Soft Skills"]}
+          selected={
+            selectedTable === "languages"
+              ? "Languages & Frameworks"
+              : selectedTable === "tools"
+                ? "Tools"
+                : "Soft Skills"
+          }
+          onChange={(value) => {
+            if (value === "Languages & Frameworks")
+              setSelectedTable("languages");
+            else if (value === "Tools") setSelectedTable("tools");
+            else setSelectedTable("softSkills");
+          }}
+        />
+      </RadioGroup>
+
+      {/* Card containing the selected table */}
+      <Card>
+        {selectedTable === "languages" &&
+          renderTable("Languages & Frameworks", languagesAndFrameworks)}
+        {selectedTable === "tools" && renderTable("Tools", tools, "Tool")}
+        {selectedTable === "softSkills" &&
+          renderTable("Soft Skills", softSkills, "Skill", "Strength")}
+      </Card>
+    </Container>
   );
 };
 

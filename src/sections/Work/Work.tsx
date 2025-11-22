@@ -27,7 +27,7 @@ const WORK_DATA: WorkItem[] = [
     description:
       "A fully functional flower shop website with dynamic pages, product listings, WBS documentation, and a CMS for managing categories, inventory, and content.",
     image: "/heaven_scent.png",
-    link: "file:///C:/Users/ANDREA/Documents/TERM%201/Web%20Development/Module%209/Project4_Adrianna_Samonte/index.html",
+    link: "/Project4_Adrianna_Samonte",
     tech: ["JavaScript", "HTML", "CSS"],
   },
   {
@@ -39,11 +39,11 @@ const WORK_DATA: WorkItem[] = [
     tech: ["PHP", "MySQL", "AJAX", "WYSIWYG Editor"],
   },
   {
-    title: "Portfolio Website",
+    title: "HAYDEN PLANETARIUM Mockup",
     description: "A fully custom portfolio built with React & TypeScript.",
-    image: "/portfolioheroimage.png",
-    link: "https://yourproject.com",
-    tech: ["React", "TypeScript", "Styled Components"],
+    image: "/mockup.png",
+    link: "/Project1_Adrianna_Samonte/project1.html",
+    tech: ["HTML", "CSS"],
   },
 ];
 

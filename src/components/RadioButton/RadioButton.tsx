@@ -3,35 +3,46 @@ import styled from "styled-components";
 import { RadioButtonProps } from "./RadioButton.types";
 
 const StyledRadioButton = styled.div`
-  gap: 10px;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 `;
 
-const StyledRadio = styled.input<{ disabled?: boolean }>`
-  margin: auto;
+const RadioOption = styled.label<{ disabled?: boolean }>`
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
 
+const RadioInput = styled.input`
+  margin-right: 6px;
+`;
+
 const RadioButton: React.FC<RadioButtonProps> = ({
+  label,
   name,
   options,
+  selected,
+  onChange,
   disabled,
-  label,
 }) => {
   return (
     <StyledRadioButton>
-      {label && <span>{label}</span>} {/* ✅ add label here */}
-      <div>
+      {label && <span>{label}</span>}
+      <div style={{ display: "flex" }}>
         {options.map((opt) => (
-          <label key={opt} style={{ marginRight: "10px" }}>
-            <StyledRadio
+          <RadioOption key={opt} disabled={disabled}>
+            <RadioInput
               type="radio"
               name={name}
               value={opt}
+              checked={selected === opt}
+              onChange={() => onChange?.(opt)}
               disabled={disabled}
             />
             {opt}
-          </label>
+          </RadioOption>
         ))}
       </div>
     </StyledRadioButton>

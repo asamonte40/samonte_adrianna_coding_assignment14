@@ -1,0 +1,409 @@
+/********f************
+    
+    Project 1 Stylesheet
+    Name: Adrianna Samonte
+    Date: February 26, 2025
+    Description: Project 1 CSS
+
+*********************/
+
+html,
+body,
+section,
+p,
+header,
+nav,
+footer,
+div,
+article,
+aside,
+ol,
+ul,
+li,
+h1,
+h6 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e6e6e6;
+}
+
+div#container {
+  width: 810px;
+  background: linear-gradient(
+    to bottom,
+    white 96%,
+    #e3e3e3
+  ); /*shadow at the bottom of the container*/
+  border-radius: 8px;
+  margin: 10px auto;
+  padding: 10px;
+  box-shadow:
+    1px 1px 2px #a2a2a2,
+    -1px -1px 2px #a2a2a2;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* font */
+}
+
+/* header */
+/*this is to make the picture, nav and search button/bar horizontal*/
+div#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/*nav for the header*/
+#nav-1 {
+  justify-content: center;
+}
+
+#nav-1 ul {
+  display: flex;
+  list-style-type: none;
+  text-align: center;
+  padding-bottom: 3px;
+}
+
+#nav-1 ul a {
+  color: #0174a1;
+  text-decoration: none;
+}
+
+#nav-1 ul li {
+  border-left: 1px solid #0174a1; /*use to add side borders*/
+  padding: 0px 12px;
+  font-size: 10px;
+}
+
+/* I used this to eliminate the extra border/divider */
+#nav-1 ul li:first-child {
+  border-left: none;
+}
+
+/*form*/
+/* changing the width of the search bar*/
+input[type="text"] {
+  width: 80px;
+}
+
+input::placeholder {
+  /* NUMBER 3 ISSUE */
+  opacity: 0;
+}
+
+.searchbar {
+  padding-bottom: 8px;
+}
+
+/* the header background image */
+.headerbackground {
+  position: relative;
+}
+
+.headerphoto {
+  display: block; /* makes the navbar meet/touch the photo*/
+}
+
+h1 {
+  position: absolute;
+  color: white;
+  top: 30px;
+  left: 25px;
+  font-size: 32px;
+  letter-spacing: 8px;
+  font-weight: normal;
+}
+
+.sidename {
+  position: absolute;
+  color: white;
+  bottom: 15px;
+  right: 39px;
+  font-size: 6.9px; /* NUMBER 4 ISSUE */
+  letter-spacing: 2px;
+}
+
+/*navbar under the picture*/
+#nav-2 {
+  background: linear-gradient(to bottom, #a3cffb, #0174a1);
+  position: relative; /*makes the asidenav meet/touch the navbar*/
+}
+
+#nav-2 ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  padding: 3px;
+}
+
+#nav-2 ul a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 11px;
+}
+
+#nav-2 ul li {
+  border-left: 1px solid #017aaa; /*use to add side borders*/
+  box-shadow: 2px 0px rgb(190, 217, 247); /*use to add a shadow for the border*/
+  padding: 0px 13px;
+}
+
+/* I used this to eliminate the extra border/divider */
+#nav-2 ul li:first-child {
+  border-left: none;
+}
+/* i used this to eliminate the extra shadow*/
+#nav-2 ul li:last-child {
+  box-shadow: none;
+}
+
+/* the main content including the aside and article*/
+#content {
+  display: flex;
+}
+
+/* aside */
+aside {
+  margin-top: -4px;
+  width: 185px;
+}
+
+/*nav for the aside*/
+#nav-3 {
+  width: 200px;
+  padding-bottom: 38px;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+/*to put the links inside the boxes*/
+#nav-3 ul {
+  list-style-position: inside;
+}
+
+#nav-3 ul a {
+  color: rgb(43, 43, 43);
+  text-decoration: none;
+  font-size: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/*gradient for the li*/
+#nav-3 ul li {
+  background: linear-gradient(to bottom, #f5f5f5, #bababa);
+  padding: 6px;
+  /*list-style-type: none; this is for the diamond symbol*/
+}
+
+#nav-3 li:first-child {
+  list-style-type: none;
+}
+
+/*this is to make the li symbol diamond, 
+but im using the default because im not sure
+IF ITS A CIRCLE OR A DIAMOND
+#nav-3 li:not(:first-of-type)::before{
+	content: "⬥";
+	margin-right: 6px;
+}
+*/
+
+/* paragraph for the aside*/
+aside p {
+  padding-top: 8px;
+  font-size: 11px;
+  color: #767676;
+  line-height: 15px;
+}
+
+/* nase photo moved to the right of the paragraph*/
+aside p img.nasa {
+  float: right;
+}
+
+/* article */
+article {
+  margin-left: 28px;
+}
+
+#home {
+  font-size: 10px;
+  padding-top: 6px;
+}
+
+/*main divs*/
+#main1 {
+  margin-left: 10px;
+  padding-top: 3px;
+}
+
+#main2 {
+  margin-left: 10px;
+}
+
+/*individual changes in the mains*/
+article a {
+  text-decoration: none;
+  color: #0174a1;
+}
+
+article h3 {
+  border-bottom: 1px solid #cfcfcf;
+  width: 565px;
+  padding-bottom: 5px;
+  margin-bottom: 13px;
+}
+
+p.bold {
+  padding-bottom: 20px;
+  font-size: 12px;
+}
+
+a.colour {
+  color: #0174a1;
+  font-weight: bold;
+}
+
+/*first paragraph*/
+.paragraph1 {
+  font-size: 12px;
+  width: 550px;
+  margin-bottom: 10px;
+  line-height: 23px;
+}
+
+/* used flex so that the paragraph and picture are beside eachother*/
+div.picgraph {
+  display: flex;
+}
+
+/*paragraph 2*/
+.paragraph2 {
+  font-size: 12px;
+  width: 305px;
+  line-height: 23px;
+}
+
+/* mainside with photo and paragraph*/
+.mainside {
+  float: right;
+  width: 253px;
+  border: 1px solid #cfcfcf;
+  margin-top: 7px;
+}
+
+.rover {
+  border: 1px solid black;
+  width: 235px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7px;
+}
+
+p.sideparagraph {
+  font-size: 11px;
+  padding-left: 6px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 250px;
+  line-height: 15px;
+}
+
+/*normal links*/
+.main-link ul {
+  list-style-type: none;
+  padding-left: 15px;
+  padding-top: 6px;
+}
+
+.main-link ul li {
+  padding: 9px;
+}
+
+.main-link ul a {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* footer */
+div#footer {
+  font-size: 10px;
+  text-align: center;
+}
+
+/*nav for the footer*/
+#nav-4 {
+  padding-top: 70px;
+}
+
+#nav-4 ol {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding-bottom: 3px;
+}
+
+#nav-4 ol a {
+  color: #0174a1;
+  text-decoration: none;
+  text-align: center;
+}
+
+#nav-4 ol li {
+  border-left: 1px solid black; /*used for side borders*/
+  padding: 0px 10px;
+  font-size: 10px;
+}
+
+/* I used this to eliminate the extra border/divider */
+#nav-4 ol li:first-child {
+  border-left: none;
+}
+
+footer a {
+  text-decoration: none;
+  color: #0174a1;
+}
+
+/*changing the last paragraphs color*/
+footer p:last-child {
+  color: #999999;
+}
+
+#map {
+  border-left: 1px solid black;
+  padding-left: 5px;
+}
+
+#copyright {
+  padding-bottom: 4px;
+}
+
+/* focus and hover effect */
+#nav-2 li:hover,
+#nav-3 li:hover {
+  background: #0174a1;
+  transition: 1s;
+}
+
+#nav-1 li:hover,
+#nav-4 li:hover {
+  background-color: #f1f1f1;
+}
+
+#nav-1 a:focus,
+#nav-2 a:focus,
+#nav-4 a:focus,
+#nav-3 a:hover,
+#nav-3 a:focus {
+  color: #80c0ff;
+}
+
+a:hover {
+  color: #80c0ff;
+}
