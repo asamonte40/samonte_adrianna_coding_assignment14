@@ -97,34 +97,49 @@ const Skills = () => {
         in web development.
       </Text>
 
-      {/* Radio buttons to switch tables */}
-      <RadioGroup>
-        <RadioButton
-          name="skills"
-          options={["Languages & Frameworks", "Tools", "Soft Skills"]}
-          selected={
-            selectedTable === "languages"
-              ? "Languages & Frameworks"
-              : selectedTable === "tools"
-                ? "Tools"
-                : "Soft Skills"
-          }
-          onChange={(value) => {
-            if (value === "Languages & Frameworks")
-              setSelectedTable("languages");
-            else if (value === "Tools") setSelectedTable("tools");
-            else setSelectedTable("softSkills");
-          }}
-        />
-      </RadioGroup>
-
       {/* Card containing the selected table */}
-      <Card>
+      <Card
+        style={{
+          margin: "2rem auto 0",
+          padding: "3rem",
+          width: "1000px",
+
+          // FIX: make card always same size
+          minHeight: "420px",
+
+          // Optional: center content inside the card
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "flex-start",
+        }}
+      >
         {selectedTable === "languages" &&
           renderTable("Languages & Frameworks", languagesAndFrameworks)}
         {selectedTable === "tools" && renderTable("Tools", tools, "Tool")}
         {selectedTable === "softSkills" &&
           renderTable("Soft Skills", softSkills, "Skill", "Strength")}
+
+        {/* Radio buttons to switch tables */}
+        <RadioGroup>
+          <RadioButton
+            name="skills"
+            options={["Languages & Frameworks", "Tools", "Soft Skills"]}
+            selected={
+              selectedTable === "languages"
+                ? "Languages & Frameworks"
+                : selectedTable === "tools"
+                  ? "Tools"
+                  : "Soft Skills"
+            }
+            onChange={(value) => {
+              if (value === "Languages & Frameworks")
+                setSelectedTable("languages");
+              else if (value === "Tools") setSelectedTable("tools");
+              else setSelectedTable("softSkills");
+            }}
+          />
+        </RadioGroup>
       </Card>
     </Container>
   );

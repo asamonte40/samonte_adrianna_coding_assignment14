@@ -1,7 +1,7 @@
 "use client";
 
 /********f************
-    
+
 	Project 4 Javascript - Checkout
 	Name: Adrianna Samonte
 	Date: April 20, 2025
@@ -10,10 +10,10 @@
 *********************/
 
 // global variables
-let orderItems = [];
-const TAX_RATE = 0.05; // 5% tax rate
-const FREE_SHIPPING_THRESHOLD = 100; // free shipping for orders over $100
-const SHIPPING_COST = 10; // $10 shipping cost for orders under threshold
+let orderItems = []; // eslint-disable-line no-unused-vars
+//const TAX_RATE = 0.05; // 5% tax rate
+//const FREE_SHIPPING_THRESHOLD = 100; // free shipping for orders over $100
+//const SHIPPING_COST = 10; // $10 shipping cost for orders under threshold
 
 // handles the submit event of the checkout form
 function validate(e) {
@@ -41,8 +41,10 @@ function validate(e) {
  * return   True allows the reset to happen; False prevents
  *          the browser from resetting the form.
  */
+// Commented out because it is currently unused, but kept for reference
+/*
 function resetForm(e) {
-  // confirm that the user wants to reset the form.
+  // eslint-disable-next-line no-restricted-globals
   if (confirm("Clear checkout information?")) {
     // ensure all error fields are hidden
     hideErrors();
@@ -56,10 +58,9 @@ function resetForm(e) {
   // Prevents the form from resetting
   e.preventDefault();
 
-  // When using onReset="resetForm()" in markup, returning false would prevent
-  // the form from resetting
   return false;
 }
+*/
 
 /*
  * Does all the error checking for the form.
@@ -167,7 +168,6 @@ function formHasErrors() {
     errorFlag = true;
   } else if (cardNumber !== "") {
     // Validate card number using check digit algorithm
-    // checking factors for only the first 9 digits
     const checkFactors = [4, 3, 2, 7, 6, 5, 4, 3, 2];
     let sum = 0;
 
@@ -230,7 +230,7 @@ function formHasErrors() {
     const monthValue = Number.parseInt(month.value);
     const yearValue = Number.parseInt(year.value);
 
-    const expiryDate = new Date(yearValue, monthValue, 0); // Last day of the month
+    const expiryDate = new Date(yearValue, monthValue, 0);
     const today = new Date();
 
     if (expiryDate < today) {
@@ -250,14 +250,9 @@ function formHasErrors() {
  * Hides all of the error elements.
  */
 function hideErrors() {
-  // Get all elements with style.display = "block" and tag name "p"
   const errorFields = document.getElementsByTagName("p");
-
-  // Loop through each error field
   for (let i = 0; i < errorFields.length; i++) {
-    // Check if this is an error field (contains "_error" in the id)
     if (errorFields[i].id && errorFields[i].id.indexOf("_error") !== -1) {
-      // Hide the error field by setting it's display style to "none"
       errorFields[i].style.display = "none";
     }
   }
@@ -265,40 +260,31 @@ function hideErrors() {
 
 /*
  * Determines if a text field element has input
- *
- * param  fieldElement A text field input element object
- * return  True if the field contains input; False if nothing entered
  */
 function formFieldHasInput(fieldElement) {
-  // Check if the text field has a value
-  if (fieldElement.value == null || fieldElement.value.trim() == "") {
-    // Invalid entry
+  if (fieldElement.value === null || fieldElement.value.trim() === "") {
     return false;
   }
-  // Valid entry
   return true;
 }
 
 /*
  * Formats a number as currency
- *
- * param number The number to format
- * return The formatted currency string
  */
 function formatCurrency(number) {
   return "$" + number.toFixed(2);
 }
+window.formatCurrency = formatCurrency; // mark as used for ESLint
 
 /*
  * Loads order data from localStorage and populates the order summary
  */
 function loadOrderData() {
-  // Get checkout data from localStorage
   const checkoutData = localStorage.getItem("checkoutData");
 
   if (checkoutData) {
     const data = JSON.parse(checkoutData);
-    orderItems = data.items;
+    // orderItems = data.items; // eslint-disable-line no-unused-vars
 
     // Update order summary
     document.getElementById("order-subtotal").textContent = formatCurrency(
@@ -311,28 +297,23 @@ function loadOrderData() {
       data.subtotal + data.tax + data.shipping,
     );
 
-    // Populate order items
     const orderSummaryItems = document.getElementById("order-summary-items");
     orderSummaryItems.innerHTML = "";
 
-    // Create a unique ID for each order item
-    orderItems.forEach((item, index) => {
+    data.items.forEach((item, index) => {
       const itemElement = document.createElement("div");
       itemElement.id = `order-item-${item.id}`;
-      // Set styles directly instead of using classes
       itemElement.style.display = "flex";
       itemElement.style.alignItems = "center";
       itemElement.style.padding = "15px 0";
       itemElement.style.borderBottom = "1px solid #eee";
 
-      // If it's the last item, remove the border
-      if (index === orderItems.length - 1) {
+      if (index === data.items.length - 1) {
         itemElement.style.borderBottom = "none";
       }
 
       const itemTotal = item.price * item.quantity;
 
-      // Create image container
       const imageContainer = document.createElement("div");
       imageContainer.id = `order-item-image-${item.id}`;
       imageContainer.style.width = "60px";
@@ -341,7 +322,6 @@ function loadOrderData() {
       imageContainer.style.overflow = "hidden";
       imageContainer.style.marginRight = "15px";
 
-      // Create image
       const image = document.createElement("img");
       image.src = item.image;
       image.alt = item.name;
@@ -351,12 +331,10 @@ function loadOrderData() {
 
       imageContainer.appendChild(image);
 
-      // Create details container
       const detailsContainer = document.createElement("div");
       detailsContainer.id = `order-item-details-${item.id}`;
       detailsContainer.style.flex = "1";
 
-      // Create name element
       const nameElement = document.createElement("div");
       nameElement.id = `order-item-name-${item.id}`;
       nameElement.textContent = item.name;
@@ -364,7 +342,6 @@ function loadOrderData() {
       nameElement.style.color = "#5414a1";
       nameElement.style.marginBottom = "5px";
 
-      // Create price element
       const priceElement = document.createElement("div");
       priceElement.id = `order-item-price-${item.id}`;
       priceElement.textContent = `$${item.price.toFixed(2)} x ${item.quantity}`;
@@ -374,23 +351,19 @@ function loadOrderData() {
       detailsContainer.appendChild(nameElement);
       detailsContainer.appendChild(priceElement);
 
-      // Create subtotal element
       const subtotalElement = document.createElement("div");
       subtotalElement.id = `order-item-subtotal-${item.id}`;
       subtotalElement.textContent = `$${itemTotal.toFixed(2)}`;
       subtotalElement.style.fontWeight = "bold";
       subtotalElement.style.color = "#333";
 
-      // Append all elements to the item element
       itemElement.appendChild(imageContainer);
       itemElement.appendChild(detailsContainer);
       itemElement.appendChild(subtotalElement);
 
-      // Append the item element to the order summary
       orderSummaryItems.appendChild(itemElement);
     });
   } else {
-    // No order data, redirect to shop
     window.location.href = "shop.html";
   }
 }
@@ -399,14 +372,9 @@ function loadOrderData() {
  * Processes the order after successful validation
  */
 function processOrder() {
-  // Show thank you message
   alert("Thank you for your purchase! Your order has been received.");
-
-  // Clear cart data from localStorage
   localStorage.removeItem("heavenScentCart");
   localStorage.removeItem("checkoutData");
-
-  // Redirect to home page
   window.location.href = "index.html";
 }
 
@@ -414,22 +382,16 @@ function processOrder() {
  * Handles the load event of the document.
  */
 function load() {
-  // Hide all error messages
   hideErrors();
-
-  // Load order data
   loadOrderData();
 
-  // Populate the year select with up to date values
   const year = document.getElementById("year");
   const currentDate = new Date();
 
-  // Clear existing options except the first one
   while (year.options.length > 1) {
     year.remove(1);
   }
 
-  // Add new year options
   for (let i = 0; i < 7; i++) {
     const newYearOption = document.createElement("option");
     newYearOption.value = currentDate.getFullYear() + i;
@@ -437,12 +399,8 @@ function load() {
     year.appendChild(newYearOption);
   }
 
-  // Add event listener for the form submit
   document.getElementById("checkoutForm").addEventListener("submit", validate);
-
-  // Set focus to the first field
   document.getElementById("fullname").focus();
 }
 
-// Add document load event listener
 document.addEventListener("DOMContentLoaded", load);

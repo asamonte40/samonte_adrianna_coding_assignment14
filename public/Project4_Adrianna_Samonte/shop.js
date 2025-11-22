@@ -1,5 +1,5 @@
 /********f************
-    
+
 	Project 4 Javascript - Checkout
 	Name: Adrianna Samonte
 	Date: April 20, 2025
@@ -14,20 +14,30 @@ const TAX_RATE = 0.05; // 5% tax rate
 const FREE_SHIPPING_THRESHOLD = 100; // Free shipping for orders over $100
 const SHIPPING_COST = 10; // $10 shipping cost for orders under threshold
 
+// Global DOM elements
+let sideCart,
+  sideCartItems,
+  sideCartEmpty,
+  cartCount,
+  checkoutBtn,
+  cartOverlay,
+  closeCartBtn,
+  continueShoppingBtn;
+
 /*
  * Handles the load event of the document.
  */
 function load() {
   // DOM elements
   const cartIcon = document.getElementById("cart-icon");
-  const sideCart = document.getElementById("side-cart");
-  const closeCartBtn = document.getElementById("close-cart");
-  const cartOverlay = document.getElementById("cart-overlay");
-  const continueShoppingBtn = document.getElementById("continue-shopping");
-  const sideCartItems = document.getElementById("side-cart-items");
-  const sideCartEmpty = document.getElementById("side-cart-empty");
-  const cartCount = document.getElementById("cart-count");
-  const checkoutBtn = document.getElementById("checkout-btn");
+  sideCart = document.getElementById("side-cart");
+  closeCartBtn = document.getElementById("close-cart");
+  cartOverlay = document.getElementById("cart-overlay");
+  continueShoppingBtn = document.getElementById("continue-shopping");
+  sideCartItems = document.getElementById("side-cart-items");
+  sideCartEmpty = document.getElementById("side-cart-empty");
+  cartCount = document.getElementById("cart-count");
+  checkoutBtn = document.getElementById("checkout-btn");
 
   // Get all add to cart buttons
   const addToCartBtns = [];
@@ -140,13 +150,13 @@ function updateCartCount() {
     (total, item) => total + item.quantity,
     0,
   );
-  document.getElementById("cart-count").textContent = totalItems;
+  cartCount.textContent = totalItems;
 
   // Enable/disable checkout button
   if (totalItems > 0) {
-    document.getElementById("checkout-btn").classList.remove("disabled");
+    checkoutBtn.classList.remove("disabled");
   } else {
-    document.getElementById("checkout-btn").classList.add("disabled");
+    checkoutBtn.classList.add("disabled");
   }
 }
 
@@ -155,15 +165,14 @@ function updateCartCount() {
  */
 function renderSideCart() {
   // Clear existing cart items
-  const sideCartItems = document.getElementById("side-cart-items");
   sideCartItems.innerHTML = "";
 
   if (cartItems.length === 0) {
     // Show empty cart message
-    document.getElementById("side-cart-empty").style.display = "block";
+    sideCartEmpty.style.display = "block";
   } else {
     // Hide empty cart message
-    document.getElementById("side-cart-empty").style.display = "none";
+    sideCartEmpty.style.display = "none";
 
     // Add cart items
     cartItems.forEach((item, index) => {
@@ -293,8 +302,8 @@ function updateCartSummary() {
  * Open cart
  */
 function openCart() {
-  document.getElementById("side-cart").style.right = "0";
-  document.getElementById("cart-overlay").style.display = "block";
+  sideCart.style.right = "0";
+  cartOverlay.style.display = "block";
   document.body.style.overflow = "hidden"; // Prevent scrolling when cart is open
 }
 
@@ -302,8 +311,8 @@ function openCart() {
  * Close cart
  */
 function closeCart() {
-  document.getElementById("side-cart").style.right = "-400px";
-  document.getElementById("cart-overlay").style.display = "none";
+  sideCart.style.right = "-400px";
+  cartOverlay.style.display = "none";
   document.body.style.overflow = ""; // Restore scrolling
 }
 

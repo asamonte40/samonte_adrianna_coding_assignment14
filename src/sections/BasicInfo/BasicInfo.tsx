@@ -64,7 +64,14 @@ const BasicInfo = () => {
         height="600px"
       />
 
-      <Card color="white" width="1000px">
+      <Card
+        style={{
+          position: "relative",
+          margin: "-60px auto 0",
+          padding: "3rem 2rem",
+          width: "1000px",
+        }}
+      >
         <Name>Adrianna Samonte</Name>
         <Subtitle>Full-Stack Web Developer • Student</Subtitle>
 
