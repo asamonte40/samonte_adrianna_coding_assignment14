@@ -6,4 +6,5 @@ export interface HeroImageProps {
   children?: React.ReactNode;
   height?: string;
   overlayColor?: string;
+  style?: React.CSSProperties;
 }

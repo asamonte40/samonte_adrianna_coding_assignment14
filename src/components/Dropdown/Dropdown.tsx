@@ -17,6 +17,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   options,
   disabled,
   onChange,
+  style,
 }) => {
   return (
     <label>
@@ -24,6 +25,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       <StyledSelect
         disabled={disabled}
         onChange={(e) => onChange?.(e.target.value)}
+        style={style}
       >
         {options.map((opt) => (
           <option key={opt} value={opt}>

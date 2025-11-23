@@ -2,18 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Card from "../../components/Card";
 import Button from "../../components/Button";
-import Img from "../../components/Img"; // <-- your custom Img component
+import Img from "../../components/Img";
+import Text from "../../components/Text";
 
 const Section = styled.section`
-  padding: 4rem 2rem 6rem;
+  padding: 6rem 2rem 4rem;
   margin-bottom: 6rem;
-`;
-
-const Heading = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #3d2f24;
-  text-align: center;
 `;
 
 const Grid = styled.div`
@@ -52,7 +46,16 @@ const Work = () => {
 
   return (
     <Section id="work">
-      <Heading>My Projects</Heading>
+      <Text
+        style={{
+          fontSize: "2rem",
+          marginBottom: "2rem",
+          color: "#3d2f24",
+          textAlign: "center",
+        }}
+      >
+        My Projects
+      </Text>
 
       <Grid>
         {WORK_DATA.map((item, i) => (
@@ -77,7 +80,7 @@ const Work = () => {
             />
 
             {/* Title */}
-            <h3
+            <Text
               style={{
                 marginTop: "1rem",
                 fontSize: "1.4rem",
@@ -85,17 +88,19 @@ const Work = () => {
               }}
             >
               {item.title}
-            </h3>
+            </Text>
 
             {/* Description */}
-            <p
+            <Text
               style={{
                 marginTop: "0.5rem",
                 color: "#6d5c4a",
+                fontWeight: 600,
+                marginBottom: "1rem",
               }}
             >
               {item.description}
-            </p>
+            </Text>
 
             {/* Tech List */}
             <div
@@ -104,6 +109,7 @@ const Work = () => {
                 display: "flex",
                 flexWrap: "wrap",
                 gap: "0.5rem",
+                marginBottom: "1rem",
               }}
             >
               {item.tech.map((t) => (
@@ -115,6 +121,8 @@ const Work = () => {
                     borderRadius: "8px",
                     fontSize: "0.8rem",
                     color: "#3d2f24",
+                    marginTop: "1rem",
+                    display: "flex",
                   }}
                 >
                   {t}

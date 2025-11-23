@@ -1,84 +1,118 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Card from "../../components/Card";
 import Text from "../../components/Text";
 import Button from "../../components/Button";
-import Dropdown from "../../components/Dropdown";
+import Img from "../../components/Img";
 
 const Section = styled.section`
-  padding: 6rem 2rem 4rem; /* extra top padding to avoid navbar overlap */
-  background: #f7f2ed;
+  padding: 6rem 2rem 4rem;
 `;
 
-const Heading = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #3d2f24;
-  text-align: center;
-`;
-
-const CardWrapper = styled(Card)`
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-`;
-
-const DropdownWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  justify-items: center;
 `;
 
 const Resources = () => {
   const RESOURCES = [
-    { name: "React Documentation", link: "https://react.dev/" },
-    { name: "MDN Web Docs", link: "https://developer.mozilla.org/" },
-    { name: "CSS Tricks", link: "https://css-tricks.com/" },
-    { name: "JavaScript Info", link: "https://javascript.info/" },
-    { name: "Stack Overflow", link: "https://stackoverflow.com/" },
-    { name: "Git & GitHub", link: "https://github.com/" },
+    {
+      title: "YouTube",
+      icon: "/youtube_icon.png",
+      summary:
+        "A great platform for learning web development, tutorials, and coding walkthroughs.",
+      link: "https://www.youtube.com/",
+    },
+    {
+      title: "Git & GitHub",
+      icon: "/github_logo.png",
+      summary:
+        "Version control system and platform for collaborating on projects.",
+      link: "https://github.com/",
+    },
+    {
+      title: "W3Schools",
+      icon: "/w3schools_logo.png",
+      summary:
+        "Beginner-friendly tutorials for HTML, CSS, JavaScript, and more.",
+      link: "https://www.w3schools.com/",
+    },
+    {
+      title: "Stack Overflow",
+      icon: "/stackoverflow.png",
+      summary: "Community Q&A for coding problems and solutions.",
+      link: "https://stackoverflow.com/",
+    },
+    {
+      title: "Canva",
+      icon: "/canva_logo.png",
+      summary:
+        "A simple and intuitive tool for creating graphics, layouts, and designs quickly.",
+      link: "https://www.canva.com/",
+    },
   ];
-
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   return (
     <Section id="resources">
-      <Heading>Resources</Heading>
+      <Text
+        style={{
+          fontSize: "2rem",
+          marginBottom: "2rem",
+          color: "#3d2f24",
+          textAlign: "center",
+        }}
+      >
+        Resources
+      </Text>
 
-      <CardWrapper>
-        <Text size="medium" color="#4a3f35" style={{ marginBottom: "1rem" }}>
-          Select a resource from the dropdown and click "Go" to visit the site.
-        </Text>
-
-        <DropdownWrapper>
-          <Dropdown
-            label="Choose a resource:"
-            options={RESOURCES.map((r) => r.name)}
-            disabled={false}
-            onChange={(value) => {
-              const index = RESOURCES.findIndex((r) => r.name === value);
-              setSelectedIndex(index);
-            }}
-          />
-
-          <Button
-            label="Go"
-            onClick={() => {
-              if (selectedIndex !== null) {
-                window.open(RESOURCES[selectedIndex].link, "_blank");
-              }
-            }}
+      <Grid>
+        {RESOURCES.map((res) => (
+          <Card
+            key={res.title}
             style={{
-              background: "#a0826d",
-              color: "white",
-              padding: "8px 20px",
-              borderRadius: "6px",
+              width: "350px",
+              padding: "1.5rem",
+              backgroundColor: "white",
             }}
-          />
-        </DropdownWrapper>
-      </CardWrapper>
+          >
+            <Img
+              src={res.icon}
+              alt={res.title}
+              style={{ width: "auto", height: "50px" }}
+            />
+            <Text
+              size="small"
+              color="#3d2f24"
+              style={{ marginBottom: "0.5rem" }}
+            >
+              {res.title}
+            </Text>
+            <Text
+              size="small"
+              color="#4a3f35"
+              style={{ marginBottom: "1rem", fontWeight: 600 }}
+            >
+              {res.summary}
+            </Text>
+            <Button
+              label="Visit"
+              onClick={() => window.open(res.link, "_blank")}
+              style={{
+                display: "inline-block",
+                marginTop: "1rem",
+                background: "#a0826d",
+                color: "white",
+                borderRadius: "8px",
+                textDecoration: "none",
+                fontSize: "0.9rem",
+                padding: "10px 18px",
+              }}
+            />
+          </Card>
+        ))}
+      </Grid>
     </Section>
   );
 };

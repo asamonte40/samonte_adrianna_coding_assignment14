@@ -9,19 +9,28 @@ import TableCell from "../../components/Table/TableCell";
 import TableFooter from "../../components/Table/TableFooter";
 import styled from "styled-components";
 
-const Container = styled.div`
+const Section = styled.div`
   max-width: 1200px;
   margin: 3rem auto;
-  padding: 1rem;
   text-align: center;
+  padding: 3rem 2rem;
 `;
 
-const RadioGroup = styled.div`
+const PrettyRadioWrapper = styled.div`
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+
+  label {
+    font-size: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    margin: 0 0.4rem;
+    transition: 0.25s ease;
+  }
 `;
 
 const Skills = () => {
@@ -30,8 +39,7 @@ const Skills = () => {
   const languagesAndFrameworks = [
     { skill: "HTML5", level: "Advanced" },
     { skill: "CSS3 / SCSS", level: "Advanced" },
-    { skill: "JavaScript (ES6+)", level: "Intermediate" },
-    { skill: "TypeScript", level: "Intermediate" },
+    { skill: "JavaScript / TypeScript", level: "Intermediate" },
     { skill: "React", level: "Intermediate" },
     { skill: "PHP", level: "Intermediate" },
     { skill: "MySQL", level: "Intermediate" },
@@ -43,7 +51,7 @@ const Skills = () => {
     { skill: "phpMyAdmin", level: "Proficient" },
     { skill: "Figma", level: "Proficient" },
     { skill: "Canva", level: "Proficient" },
-    { skill: "XAMPP", level: "Proficient" },
+    { skill: "Docker", level: "Proficient" },
   ];
 
   const softSkills = [
@@ -87,28 +95,34 @@ const Skills = () => {
   );
 
   return (
-    <Container>
-      <Text size="large" color="#3d2f24">
+    <Section>
+      <Text
+        style={{
+          fontSize: "2rem",
+          marginBottom: "2rem",
+          color: "#3d2f24",
+          textAlign: "center",
+        }}
+      >
         Skills
       </Text>
 
-      <Text size="medium" color="#4a3f35" style={{ marginTop: "0.75rem" }}>
+      <Text
+        size="medium"
+        color="#4a3f35"
+        style={{ marginTop: "0.75rem", fontWeight: 600 }}
+      >
         A combination of technical and professional skills that support my work
         in web development.
       </Text>
 
-      {/* Card containing the selected table */}
       <Card
         style={{
           margin: "2rem auto 0",
           padding: "3rem",
-          width: "1000px",
+          width: "800px",
           backgroundColor: "white",
-
-          // FIX: make card always same size
-          minHeight: "420px",
-
-          // Optional: center content inside the card
+          height: "500px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -121,8 +135,8 @@ const Skills = () => {
         {selectedTable === "softSkills" &&
           renderTable("Soft Skills", softSkills, "Skill", "Strength")}
 
-        {/* Radio buttons to switch tables */}
-        <RadioGroup>
+        {/* Styled Radio Buttons */}
+        <PrettyRadioWrapper>
           <RadioButton
             name="skills"
             options={["Languages & Frameworks", "Tools", "Soft Skills"]}
@@ -140,9 +154,9 @@ const Skills = () => {
               else setSelectedTable("softSkills");
             }}
           />
-        </RadioGroup>
+        </PrettyRadioWrapper>
       </Card>
-    </Container>
+    </Section>
   );
 };
 

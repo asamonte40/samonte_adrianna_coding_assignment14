@@ -40,27 +40,30 @@ const HeroImage: React.FC<HeroImageProps> = ({
   height,
   overlayColor,
   children,
+  style,
 }) => {
   return (
-    <StyledHero disabled={disabled} height={height}>
+    <StyledHero disabled={disabled} height={height} style={style}>
       <StyledImg src={src} alt={text || "Hero image"} />
-      <Overlay overlayColor={overlayColor}>
-        {children ? (
-          children
-        ) : (
-          <div
-            style={{
-              background: "rgba(255,255,255,0.7)",
-              padding: "8px 16px",
-              borderRadius: "8px",
-              fontSize: "1.5rem",
-              color: "#000",
-            }}
-          >
-            {text}
-          </div>
-        )}
-      </Overlay>
+      {(text || children) && (
+        <Overlay overlayColor={overlayColor}>
+          {children ? (
+            children
+          ) : (
+            <div
+              style={{
+                background: "rgba(255,255,255,0.7)",
+                padding: "8px 16px",
+                borderRadius: "8px",
+                fontSize: "1.5rem",
+                color: "#000",
+              }}
+            >
+              {text}
+            </div>
+          )}
+        </Overlay>
+      )}
     </StyledHero>
   );
 };

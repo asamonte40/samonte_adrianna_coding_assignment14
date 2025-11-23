@@ -11,13 +11,6 @@ const Name = styled.h1`
   margin-bottom: 0.25rem;
 `;
 
-const Subtitle = styled.h2`
-  font-size: 1.15rem;
-  font-weight: 400;
-  color: #6d5c4a;
-  margin-bottom: 1.5rem;
-`;
-
 const InfoWrapper = styled.div`
   max-width: 700px;
   margin: 0 auto;
@@ -31,6 +24,7 @@ const BasicInfo = () => {
         src="/portfolioheroimage1.png"
         alt="portfolioheroimage"
         height="600px"
+        style={{ display: "block" }}
       />
 
       <Card
@@ -40,27 +34,42 @@ const BasicInfo = () => {
           padding: "3rem 2rem",
           width: "1000px",
           backgroundColor: "white",
+          overflow: "hidden",
         }}
       >
         <Name>Adrianna Samonte</Name>
-        <Subtitle>Full-Stack Web Developer • Student</Subtitle>
+        <Text style={{ fontWeight: 600, color: "#6d5c4a" }}>
+          Full-Stack Web Developer • Student
+        </Text>
 
         <InfoWrapper>
-          <Text size="medium" color="#4a3f35">
+          <Text
+            size="medium"
+            color="#4a3f35"
+            style={{ marginTop: "0.75rem", fontWeight: 600 }}
+          >
             I'm a student currently studying in the{" "}
             <strong>Full-Stack Web Development</strong> program at
             <strong> Red River College Polytechnic</strong>, where I’m building
             strong foundations in front-end and back-end development.
           </Text>
 
-          <Text size="medium" color="#4a3f35" style={{ marginTop: "0.75rem" }}>
+          <Text
+            size="medium"
+            color="#4a3f35"
+            style={{ marginTop: "0.75rem", fontWeight: 600 }}
+          >
             I'm passionate about creating clean, modern, and intuitive websites
             that focus on accessibility, user experience, and design
             consistency. I enjoy bringing ideas to life and learning the “why”
             behind the code I write.
           </Text>
 
-          <Text size="medium" color="#4a3f35" style={{ marginTop: "0.75rem" }}>
+          <Text
+            size="medium"
+            color="#4a3f35"
+            style={{ marginTop: "0.75rem", fontWeight: 600 }}
+          >
             I'm especially interested in front-end development, UI/UX design,
             and building responsive layouts that feel smooth and professional.
             Every new project helps me improve my skills and explore better ways

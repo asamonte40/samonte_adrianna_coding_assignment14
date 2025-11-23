@@ -19,9 +19,10 @@ const Text: React.FC<TextProps> = ({
   color,
   size,
   disabled,
+  style,
 }) => {
   return (
-    <StyledText color={color} size={size} disabled={disabled}>
+    <StyledText color={color} size={size} disabled={disabled} style={style}>
       {children}
     </StyledText>
   );
