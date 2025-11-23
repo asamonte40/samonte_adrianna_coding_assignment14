@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import Card from "../../components/Card";
+import Button from "../../components/Button";
+import Img from "../../components/Img"; // <-- your custom Img component
 
 const Section = styled.section`
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 6rem;
+  margin-bottom: 6rem;
 `;
 
 const Heading = styled.h2`
@@ -23,7 +26,7 @@ const Grid = styled.div`
 const Work = () => {
   const WORK_DATA = [
     {
-      title: "Heaven Scent - Flower Shop",
+      title: "Heaven Scent",
       description:
         "A fully functional flower shop website with dynamic pages, product listings, WBS documentation, and a CMS for managing categories, inventory, and content.",
       image: "/heaven_scent.png",
@@ -31,12 +34,12 @@ const Work = () => {
       tech: ["JavaScript", "HTML", "CSS"],
     },
     {
-      title: "DigiLight Studios - CMS Photography",
+      title: "DigiLight Studios",
       description:
         "A large-scale CMS for a photography studio featuring user roles (Admin, Photographer, Guest), photo galleries, blog management, comment moderation, CAPTCHA validation, and category-based navigation.",
-      image: "/digilight.png",
-      link: "",
-      tech: ["PHP", "MySQL", "AJAX", "WYSIWYG Editor"],
+      image: "/cmsphotography.png",
+      link: "https://github.com/asamonte40/WebDev2Project.git",
+      tech: ["PHP", "MySQL", "HTML", "CSS"],
     },
     {
       title: "HAYDEN PLANETARIUM Mockup",
@@ -53,9 +56,16 @@ const Work = () => {
 
       <Grid>
         {WORK_DATA.map((item, i) => (
-          <Card key={i} style={{ width: "350px", padding: "1.5rem" }}>
-            {/* Image */}
-            <img
+          <Card
+            key={i}
+            style={{
+              width: "350px",
+              padding: "1.5rem",
+              backgroundColor: "white",
+            }}
+          >
+            {/* Custom Img component */}
+            <Img
               src={item.image}
               alt={item.title}
               style={{
@@ -112,24 +122,22 @@ const Work = () => {
               ))}
             </div>
 
-            {/* Optional Link */}
+            {/* Optional Button */}
             {item.link && (
-              <a
-                href={item.link}
+              <Button
                 style={{
                   display: "inline-block",
                   marginTop: "1rem",
-                  padding: "10px 18px",
                   background: "#a0826d",
                   color: "white",
                   borderRadius: "8px",
                   textDecoration: "none",
                   fontSize: "0.9rem",
-                  transition: "0.3s",
+                  padding: "10px 18px",
                 }}
-              >
-                View Project
-              </a>
+                onClick={() => (window.location.href = item.link)}
+                label="View Project"
+              />
             )}
           </Card>
         ))}

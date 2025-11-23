@@ -9,8 +9,13 @@ const StyledImg = styled.img<{ disabled?: boolean }>`
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "default")};
 `;
 
-const Img: React.FC<ImgProps> = ({ src = "/yippee.jpg", alt, disabled }) => {
-  return <StyledImg src={src} alt={alt} disabled={disabled} />;
+const Img: React.FC<ImgProps> = ({
+  src = "/yippee.jpg",
+  alt,
+  disabled,
+  style,
+}) => {
+  return <StyledImg src={src} alt={alt} disabled={disabled} style={style} />;
 };
 
 export default Img;

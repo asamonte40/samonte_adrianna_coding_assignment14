@@ -11,7 +11,7 @@ const StyledCard = styled.div<{
   text-align: center;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.18);
   border: 1px solid #ddd;
-  background-color: white;
+  background-color: pink;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 `;

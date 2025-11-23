@@ -1,6 +1,5 @@
 import React from "react";
 import HeroImage from "../../components/HeroImage";
-import Button from "../../components/Button";
 import Text from "../../components/Text";
 import Card from "../../components/Card";
 import styled from "styled-components";
@@ -25,36 +24,6 @@ const InfoWrapper = styled.div`
   line-height: 1.7;
 `;
 
-const ButtonRow = styled.div`
-  margin-top: 2.2rem;
-  display: flex;
-  gap: 0.75rem;
-  justify-content: center;
-  flex-wrap: wrap;
-`;
-
-const StyledButton = styled(Button)`
-  background-color: #a0826d; /* <-- CHANGE THIS TO ANY COLOR YOU WANT */
-  color: white;
-
-  padding: 0.4rem 1rem; /* smaller button */
-  font-size: 0.85rem; /* smaller text */
-  border-radius: 6px;
-  min-width: 100px; /* smaller width */
-  text-align: center;
-
-  &:hover {
-    opacity: 0.9;
-  }
-`;
-
-const scrollToSection = (id: string) => {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-};
-
 const BasicInfo = () => {
   return (
     <>
@@ -67,9 +36,10 @@ const BasicInfo = () => {
       <Card
         style={{
           position: "relative",
-          margin: "-60px auto 0",
+          margin: "-60px auto 5rem", // <-- add some space below
           padding: "3rem 2rem",
           width: "1000px",
+          backgroundColor: "white",
         }}
       >
         <Name>Adrianna Samonte</Name>
@@ -97,22 +67,6 @@ const BasicInfo = () => {
             to build engaging digital experiences.
           </Text>
         </InfoWrapper>
-
-        <ButtonRow>
-          <StyledButton onClick={() => scrollToSection("work")} label="Work" />
-          <StyledButton
-            onClick={() => scrollToSection("skills")}
-            label="Skills"
-          />
-          <StyledButton
-            onClick={() => scrollToSection("resources")}
-            label="Resources"
-          />
-          <StyledButton
-            onClick={() => scrollToSection("developer-setup")}
-            label="Developer Setup"
-          />
-        </ButtonRow>
       </Card>
     </>
   );

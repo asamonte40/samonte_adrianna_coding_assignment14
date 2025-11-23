@@ -103,6 +103,7 @@ const Skills = () => {
           margin: "2rem auto 0",
           padding: "3rem",
           width: "1000px",
+          backgroundColor: "white",
 
           // FIX: make card always same size
           minHeight: "420px",

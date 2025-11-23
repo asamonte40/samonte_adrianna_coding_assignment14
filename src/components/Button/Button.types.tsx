@@ -3,4 +3,5 @@ export interface ButtonProps {
   disabled?: boolean;
   color?: string;
   onClick?: () => void;
+  style?: React.CSSProperties;
 }

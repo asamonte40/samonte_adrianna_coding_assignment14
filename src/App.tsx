@@ -14,22 +14,28 @@ import "./App.css";
 // import TableRow from "./components/Table/TableRow";
 // import TableCell from "./components/Table/TableCell";
 // import TableFooter from "./components/Table/TableFooter";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+
 import BasicInfo from "./sections/BasicInfo/BasicInfo";
-import Work from "./sections/Work/Work";
 import Skills from "./sections/Skills/Skills";
+import Work from "./sections/Work/Work";
+import Resources from "./sections/Resources/Resources";
+import DeveloperSetup from "./sections/DevSetup/DevSetup";
 
 function App() {
   return (
-    <div className="App">
-      <BasicInfo />
-      <section id="work">
-        <Work />
-      </section>
+    <Router>
+      <Navbar />
 
-      <section id="skills">
-        <Skills />
-      </section>
-    </div>
+      <Routes>
+        <Route path="/" element={<BasicInfo />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/developer-setup" element={<DeveloperSetup />} />
+      </Routes>
+    </Router>
   );
 }
 

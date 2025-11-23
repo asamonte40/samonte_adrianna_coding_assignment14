@@ -12,11 +12,19 @@ const StyledSelect = styled.select<{ disabled?: boolean }>`
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
 
-const Dropdown: React.FC<DropdownProps> = ({ label, options, disabled }) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  label,
+  options,
+  disabled,
+  onChange,
+}) => {
   return (
     <label>
       {label}{" "}
-      <StyledSelect disabled={disabled}>
+      <StyledSelect
+        disabled={disabled}
+        onChange={(e) => onChange?.(e.target.value)}
+      >
         {options.map((opt) => (
           <option key={opt} value={opt}>
             {opt}

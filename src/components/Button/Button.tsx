@@ -21,12 +21,14 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   color,
   onClick,
+  style,
 }) => {
   return (
     <StyledButton
       disabled={disabled}
       color={color}
       onClick={!disabled ? onClick : undefined} // prevent clicks if disabled
+      style={style}
     >
       {label}
     </StyledButton>
