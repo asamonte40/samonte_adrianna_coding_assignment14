@@ -86,7 +86,7 @@ const BasicInfo = () => {
                 fontWeight: 600,
                 fontSize: "13px",
                 borderRadius: "8px",
-                backgroundColor: "#6d5c4a",
+                background: "#a0826d",
                 color: "#fff",
                 border: "none",
                 cursor: "pointer",
