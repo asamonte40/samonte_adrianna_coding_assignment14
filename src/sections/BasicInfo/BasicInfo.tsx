@@ -2,6 +2,7 @@ import React from "react";
 import HeroImage from "../../components/HeroImage";
 import Text from "../../components/Text";
 import Card from "../../components/Card";
+import Button from "../../components/Button";
 import styled from "styled-components";
 
 const Name = styled.h1`
@@ -21,7 +22,7 @@ const BasicInfo = () => {
   return (
     <>
       <HeroImage
-        src="/portfolioheroimage1.png"
+        src="/portfolioheroimage2.png"
         alt="portfolioheroimage"
         height="600px"
         style={{ display: "block" }}
@@ -30,7 +31,7 @@ const BasicInfo = () => {
       <Card
         style={{
           position: "relative",
-          margin: "-60px auto 5rem", // <-- add some space below
+          margin: "-60px auto 5rem",
           padding: "3rem 2rem",
           width: "1000px",
           backgroundColor: "white",
@@ -39,7 +40,7 @@ const BasicInfo = () => {
       >
         <Name>Adrianna Samonte</Name>
         <Text style={{ fontWeight: 600, color: "#6d5c4a" }}>
-          Full-Stack Web Developer • Student
+          Full-Stack Web Developer • Student (she/her)
         </Text>
 
         <InfoWrapper>
@@ -48,10 +49,20 @@ const BasicInfo = () => {
             color="#4a3f35"
             style={{ marginTop: "0.75rem", fontWeight: 600 }}
           >
-            I'm a student currently studying in the{" "}
-            <strong>Full-Stack Web Development</strong> program at
-            <strong> Red River College Polytechnic</strong>, where I’m building
-            strong foundations in front-end and back-end development.
+            Currently, I am studying <strong>Full-Stack Web Development</strong>{" "}
+            at <strong>Red River College Polytechnic</strong>, where I’m
+            building a strong skills in both front-end and back-end development.
+          </Text>
+          <Text
+            size="medium"
+            color="#4a3f35"
+            style={{ marginTop: "0.75rem", fontWeight: 600 }}
+          >
+            I'm most passionate about front-end development in creating clean,
+            modern, and intuitive websites that place a strong focus on
+            accessibility, user experience, and consistency in design. I enjoy
+            converting ideas into functional, visually engaging solutions while
+            understanding the reasoning behind every line of code.
           </Text>
 
           <Text
@@ -59,22 +70,30 @@ const BasicInfo = () => {
             color="#4a3f35"
             style={{ marginTop: "0.75rem", fontWeight: 600 }}
           >
-            I'm passionate about creating clean, modern, and intuitive websites
-            that focus on accessibility, user experience, and design
-            consistency. I enjoy bringing ideas to life and learning the “why”
-            behind the code I write.
+            While I'm developing skills across the full stack, my primary focus
+            and strength lie in front-end development, UI/UX design, and
+            building responsive layouts that feel polished and professional.
+            Each project helps me continue to better my craft and find even
+            better ways to create engaging digital experiences.
           </Text>
 
-          <Text
-            size="medium"
-            color="#4a3f35"
-            style={{ marginTop: "0.75rem", fontWeight: 600 }}
-          >
-            I'm especially interested in front-end development, UI/UX design,
-            and building responsive layouts that feel smooth and professional.
-            Every new project helps me improve my skills and explore better ways
-            to build engaging digital experiences.
-          </Text>
+          <a href="/work">
+            <Button
+              label="See My Projects"
+              style={{
+                marginTop: "2rem",
+                padding: "0.8rem 1.5rem",
+                fontWeight: 600,
+                fontSize: "13px",
+                borderRadius: "8px",
+                backgroundColor: "#6d5c4a",
+                color: "#fff",
+                border: "none",
+                cursor: "pointer",
+                transition: "0.3s ease",
+              }}
+            />
+          </a>
         </InfoWrapper>
       </Card>
     </>

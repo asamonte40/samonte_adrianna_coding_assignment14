@@ -112,8 +112,9 @@ const Skills = () => {
         color="#4a3f35"
         style={{ marginTop: "0.75rem", fontWeight: 600 }}
       >
-        A combination of technical and professional skills that support my work
-        in web development.
+        These are the skills I've built as a web developer, combining both
+        technical skills with my professional skills to design projects that are
+        efficient, user-friendly, and visually engaging.
       </Text>
 
       <Card

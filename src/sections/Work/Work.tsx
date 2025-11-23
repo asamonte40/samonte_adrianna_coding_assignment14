@@ -22,7 +22,7 @@ const Work = () => {
     {
       title: "Heaven Scent",
       description:
-        "A fully functional flower shop website with dynamic pages, product listings, WBS documentation, and a CMS for managing categories, inventory, and content.",
+        "A flower shop project website I created having fully functional featuring dynamic pages, product listings, and a working checkout system for testing purchases.",
       image: "/heaven_scent.png",
       link: "/Project4_Adrianna_Samonte",
       tech: ["JavaScript", "HTML", "CSS"],
@@ -30,14 +30,15 @@ const Work = () => {
     {
       title: "DigiLight Studios",
       description:
-        "A large-scale CMS for a photography studio featuring user roles (Admin, Photographer, Guest), photo galleries, blog management, comment moderation, CAPTCHA validation, and category-based navigation.",
+        "A CMS project I create for a photography studio with user roles, photo galleries, blog management, comment moderation, CAPTCHA, and category-based navigation.",
       image: "/cmsphotography.png",
       link: "https://github.com/asamonte40/WebDev2Project.git",
       tech: ["PHP", "MySQL", "HTML", "CSS"],
     },
     {
       title: "HAYDEN PLANETARIUM Mockup",
-      description: "A fully custom portfolio built with React & TypeScript.",
+      description:
+        "A practice assignment where I recreated a provided website design using only HTML and CSS, focusing on accurately replicating the layout and visual structure.",
       image: "/mockup.png",
       link: "/Project1_Adrianna_Samonte/project1.html",
       tech: ["HTML", "CSS"],
@@ -67,7 +68,6 @@ const Work = () => {
               backgroundColor: "white",
             }}
           >
-            {/* Custom Img component */}
             <Img
               src={item.image}
               alt={item.title}
@@ -79,7 +79,6 @@ const Work = () => {
               }}
             />
 
-            {/* Title */}
             <Text
               style={{
                 marginTop: "1rem",
@@ -90,7 +89,6 @@ const Work = () => {
               {item.title}
             </Text>
 
-            {/* Description */}
             <Text
               style={{
                 marginTop: "0.5rem",
@@ -102,7 +100,6 @@ const Work = () => {
               {item.description}
             </Text>
 
-            {/* Tech List */}
             <div
               style={{
                 marginTop: "1rem",
@@ -110,6 +107,8 @@ const Work = () => {
                 flexWrap: "wrap",
                 gap: "0.5rem",
                 marginBottom: "1rem",
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
               {item.tech.map((t) => (
@@ -130,7 +129,6 @@ const Work = () => {
               ))}
             </div>
 
-            {/* Optional Button */}
             {item.link && (
               <Button
                 style={{

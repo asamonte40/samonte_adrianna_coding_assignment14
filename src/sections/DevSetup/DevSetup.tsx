@@ -91,9 +91,11 @@ const DeveloperSetup = () => {
               <Text size="small" color="#5a4734">
                 Theme: Alma Sakura
               </Text>
-              <Text size="small" color="#5a4734" style={{ fontWeight: 500 }}>
-                A soft pastel color theme designed for readability and a calm
-                coding experience.
+              <Text size="small" color="#5a4734" style={{ fontWeight: 400 }}>
+                Japanese styled theme inspired from the flower cheery blossom.
+                Based on the color of cheery blossom, asorted pinkish color are
+                darkened in lower constrast, blended in a low-profile, relieving
+                style. Language highlighting styled designed for Typescipt.
               </Text>
             </Card>
 
@@ -108,7 +110,13 @@ const DeveloperSetup = () => {
               <Text size="small" color="#5a4734" style={{ fontWeight: 600 }}>
                 Key Extensions
               </Text>
-              <ul style={{ textAlign: "left", marginTop: "0.5rem" }}>
+              <ul
+                style={{
+                  textAlign: "left",
+                  marginTop: "0.5rem",
+                  color: "#5a4734",
+                }}
+              >
                 <li>Prettier – Auto format code</li>
                 <li>Auto Close Tag – Automatically closes HTML/XML tags</li>
                 <li>Code Runner – Run code snippets quickly</li>
@@ -235,9 +243,9 @@ const DeveloperSetup = () => {
                 backgroundColor: "white",
               }}
             >
-              <Text color="#5a473c4">VS Code Default Font</Text>
+              <Text color="#5a4734">VS Code Default Font</Text>
               <FontSample font="Consolas" style={{ fontWeight: 700 }}>
-                Consolas - function greet() {"{"} return "Hi!"; {"}"}
+                Consolas - Hello World, this is a test!
               </FontSample>
             </Card>
 
@@ -248,7 +256,7 @@ const DeveloperSetup = () => {
                 backgroundColor: "white",
               }}
             >
-              <Text color="#5a473c4">Monaco</Text>
+              <Text color="#5a4734">Monaco</Text>
               <FontSample font="Monaco">
                 Monaco - The quick brown fox jumps over the lazy dog.
               </FontSample>
@@ -261,7 +269,7 @@ const DeveloperSetup = () => {
                 backgroundColor: "white",
               }}
             >
-              <Text color="#5a473c4">Courier New</Text>
+              <Text color="#5a4734">Courier New</Text>
               <FontSample font="Courier New" style={{ fontWeight: 700 }}>
                 Courier New - const hello = "world";
               </FontSample>
@@ -274,9 +282,9 @@ const DeveloperSetup = () => {
                 backgroundColor: "white",
               }}
             >
-              <Text color="#5a473c4">Cascadia Code</Text>
+              <Text color="#5a4734">Cascadia Code</Text>
               <FontSample font="Cascadia Code">
-                Cascadia Code - console.log("Hello!");
+                Cascadia Code - The five boxing wizards jump quickly
               </FontSample>
             </Card>
 
@@ -287,9 +295,9 @@ const DeveloperSetup = () => {
                 backgroundColor: "white",
               }}
             >
-              <Text color="#5a473c4">Menlo</Text>
+              <Text color="#5a4734">Menlo</Text>
               <FontSample font="Menlo" style={{ fontWeight: 700 }}>
-                Menlo - const sum = 10 + 5;
+                Menlo - ABCDEFGHIJKLMNOPQRSTUVWXYZ
               </FontSample>
             </Card>
 
@@ -300,9 +308,9 @@ const DeveloperSetup = () => {
                 backgroundColor: "white",
               }}
             >
-              <Text color="#5a473c4">Lucida Console</Text>
+              <Text color="#5a4734">Lucida Console</Text>
               <FontSample font="Lucida Console" style={{ fontWeight: 700 }}>
-                Lucida Console - console.log("Hello!");
+                Lucida Console - x = 2x + 5
               </FontSample>
             </Card>
           </>

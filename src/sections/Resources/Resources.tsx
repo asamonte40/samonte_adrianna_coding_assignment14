@@ -52,6 +52,13 @@ const Resources = () => {
         "A simple and intuitive tool for creating graphics, layouts, and designs quickly.",
       link: "https://www.canva.com/",
     },
+    {
+      title: "RRC Polytech LEARN",
+      icon: "/learn_logo.png",
+      summary:
+        "The official RRC Polytech learning platform for course materials and updates.",
+      link: "https://learn.rrc.ca/",
+    },
   ];
 
   return (
@@ -92,7 +99,11 @@ const Resources = () => {
             <Text
               size="small"
               color="#4a3f35"
-              style={{ marginBottom: "1rem", fontWeight: 600 }}
+              style={{
+                marginBottom: "1rem",
+                fontWeight: 600,
+                color: "#6d5c4a",
+              }}
             >
               {res.summary}
             </Text>
