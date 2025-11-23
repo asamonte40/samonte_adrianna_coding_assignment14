@@ -16,7 +16,6 @@ import "./App.css";
 // import TableFooter from "./components/Table/TableFooter";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-
 import BasicInfo from "./sections/BasicInfo/BasicInfo";
 import Skills from "./sections/Skills/Skills";
 import Work from "./sections/Work/Work";
