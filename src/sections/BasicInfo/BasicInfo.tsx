@@ -59,7 +59,7 @@ const BasicInfo = () => {
             color="#4a3f35"
             style={{ marginTop: "0.75rem", fontWeight: 400 }}
           >
-            I'm most passionate about front-end developer strong focus on
+            I'm most passionate about front-end development strong focus on
             accessibility, user experience, and consistency in design. I enjoy
             converting ideas into functional, visually engaging solutions while
             understanding the reasoning behind every line of code.

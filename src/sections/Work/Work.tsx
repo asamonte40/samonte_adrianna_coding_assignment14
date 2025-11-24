@@ -22,7 +22,7 @@ const Work = () => {
     {
       title: "Heaven Scent",
       description:
-        "A flower shop project website I created having fully functional featuring dynamic pages, product listings, and a working checkout system for testing purchases.",
+        "I created a fully functional flower shop website that features dynamic pages, product listings, and a working checkout system for testing purchases.",
       image: "/heaven_scent.png",
       link: "/Project4_Adrianna_Samonte",
       tech: ["JavaScript", "HTML", "CSS"],
