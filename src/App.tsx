@@ -24,17 +24,21 @@ import DeveloperSetup from "./sections/DevSetup/DevSetup";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
+    <div className="polka-bg">
+      <div className="container">
+        <Router>
+          <Navbar />
 
-      <Routes>
-        <Route path="/" element={<BasicInfo />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/work" element={<Work />} />
-        <Route path="/resources" element={<Resources />} />
-        <Route path="/developer-setup" element={<DeveloperSetup />} />
-      </Routes>
-    </Router>
+          <Routes>
+            <Route path="/" element={<BasicInfo />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/developer-setup" element={<DeveloperSetup />} />
+          </Routes>
+        </Router>
+      </div>
+    </div>
   );
 }
 

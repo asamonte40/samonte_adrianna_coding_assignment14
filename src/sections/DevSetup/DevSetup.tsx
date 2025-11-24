@@ -56,6 +56,7 @@ const DeveloperSetup = () => {
           textAlign: "center",
           boxShadow: "0 8px 20px rgba(51, 38, 3, 0.1)",
           borderRadius: "14px",
+          border: "2px solid #6d5c4a",
         }}
       >
         <Label
@@ -67,7 +68,11 @@ const DeveloperSetup = () => {
           options={["VSCode Setup", "Terminal Setup", "Preferred Editor Font"]}
           disabled={false}
           onChange={setSelectedSection}
-          style={{ marginTop: "0.5rem", width: "auto" }}
+          style={{
+            marginTop: "0.5rem",
+            width: "auto",
+            border: "2px solid #6d5c4a",
+          }}
         />
 
         {selectedSection === "VSCode Setup" && (
@@ -80,7 +85,6 @@ const DeveloperSetup = () => {
               My VSCode Setup
             </Text>
 
-            {/* Theme Card */}
             <Card
               style={{
                 margin: "1rem 0",
@@ -99,7 +103,6 @@ const DeveloperSetup = () => {
               </Text>
             </Card>
 
-            {/* Extensions Card */}
             <Card
               style={{
                 margin: "1rem 0",
@@ -107,7 +110,7 @@ const DeveloperSetup = () => {
                 backgroundColor: "white",
               }}
             >
-              <Text size="small" color="#5a4734" style={{ fontWeight: 600 }}>
+              <Text size="small" color="#5a4734">
                 Key Extensions
               </Text>
               <ul
@@ -162,14 +165,14 @@ const DeveloperSetup = () => {
               <Text size="small" color="#6d5c4a" style={{ fontWeight: 800 }}>
                 Windows Terminal
               </Text>
-              <Text size="small" color="#5a4734" style={{ fontWeight: 600 }}>
+              <Text size="small" color="#5a4734" style={{ fontWeight: 400 }}>
                 The default modern terminal for Windows with tabs,
                 customization, and multiple shells.
               </Text>
               <Text
                 size="small"
                 color="#6d5c4a"
-                style={{ marginTop: "0.5rem", fontWeight: 500 }}
+                style={{ marginTop: "0.5rem", fontWeight: 600 }}
               >
                 Common commands: <code>dir</code>, <code>cd</code>,{" "}
                 <code>git status</code>
@@ -186,14 +189,14 @@ const DeveloperSetup = () => {
               <Text size="small" color="#6d5c4a" style={{ fontWeight: 800 }}>
                 Git Bash
               </Text>
-              <Text size="small" color="#5a4734" style={{ fontWeight: 600 }}>
+              <Text size="small" color="#5a4734" style={{ fontWeight: 400 }}>
                 A Bash shell for Windows with Git commands pre-installed. Great
                 for Linux-like workflow.
               </Text>
               <Text
                 size="small"
                 color="#6d5c4a"
-                style={{ marginTop: "0.5rem", fontWeight: 500 }}
+                style={{ marginTop: "0.5rem", fontWeight: 600 }}
               >
                 Common commands: <code>git clone</code>, <code>git commit</code>
                 , <code>ls -la</code>
@@ -210,14 +213,14 @@ const DeveloperSetup = () => {
               <Text size="small" color="#6d5c4a" style={{ fontWeight: 800 }}>
                 PowerShell
               </Text>
-              <Text size="small" color="#5a4734" style={{ fontWeight: 600 }}>
+              <Text size="small" color="#5a4734" style={{ fontWeight: 400 }}>
                 Powerful Windows shell for scripting, automation, and system
                 management.
               </Text>
               <Text
                 size="small"
                 color="#6d5c4a"
-                style={{ marginTop: "0.5rem", fontWeight: 500 }}
+                style={{ marginTop: "0.5rem", fontWeight: 600 }}
               >
                 Common commands: <code>Get-Process</code>,{" "}
                 <code>Set-Location</code>, <code>Get-ChildItem</code>

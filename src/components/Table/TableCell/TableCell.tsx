@@ -14,9 +14,10 @@ const TableCell: React.FC<TableCellProps> = ({
   children,
   disabled,
   colSpan,
+  style,
 }) => {
   return (
-    <StyledCell disabled={disabled} colSpan={colSpan}>
+    <StyledCell disabled={disabled} colSpan={colSpan} style={style}>
       {children}
     </StyledCell>
   );

@@ -16,8 +16,12 @@ const StyledTable = styled.table<{ disabled?: boolean }>`
   }
 `;
 
-const Table: React.FC<TableProps> = ({ children, disabled }) => {
-  return <StyledTable disabled={disabled}>{children}</StyledTable>;
+const Table: React.FC<TableProps> = ({ children, disabled, style }) => {
+  return (
+    <StyledTable style={style} disabled={disabled}>
+      {children}
+    </StyledTable>
+  );
 };
 
 export default Table;

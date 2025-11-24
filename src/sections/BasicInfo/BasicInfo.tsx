@@ -31,11 +31,12 @@ const BasicInfo = () => {
       <Card
         style={{
           position: "relative",
-          margin: "-60px auto 5rem",
+          margin: "-55px auto 5rem",
           padding: "3rem 2rem",
           width: "1000px",
           backgroundColor: "white",
           overflow: "hidden",
+          border: "2px solid #6d5c4a",
         }}
       >
         <Name>Adrianna Samonte</Name>
@@ -47,7 +48,7 @@ const BasicInfo = () => {
           <Text
             size="medium"
             color="#4a3f35"
-            style={{ marginTop: "0.75rem", fontWeight: 600 }}
+            style={{ marginTop: "0.75rem", fontWeight: 400 }}
           >
             Currently, I am studying <strong>Full-Stack Web Development</strong>{" "}
             at <strong>Red River College Polytechnic</strong>, where I’m
@@ -56,10 +57,9 @@ const BasicInfo = () => {
           <Text
             size="medium"
             color="#4a3f35"
-            style={{ marginTop: "0.75rem", fontWeight: 600 }}
+            style={{ marginTop: "0.75rem", fontWeight: 400 }}
           >
-            I'm most passionate about front-end development in creating clean,
-            modern, and intuitive websites that place a strong focus on
+            I'm most passionate about front-end developer strong focus on
             accessibility, user experience, and consistency in design. I enjoy
             converting ideas into functional, visually engaging solutions while
             understanding the reasoning behind every line of code.
@@ -68,7 +68,7 @@ const BasicInfo = () => {
           <Text
             size="medium"
             color="#4a3f35"
-            style={{ marginTop: "0.75rem", fontWeight: 600 }}
+            style={{ marginTop: "0.75rem", fontWeight: 400 }}
           >
             While I'm developing skills across the full stack, my primary focus
             and strength lie in front-end development, UI/UX design, and
@@ -83,8 +83,8 @@ const BasicInfo = () => {
               style={{
                 marginTop: "2rem",
                 padding: "0.8rem 1.5rem",
-                fontWeight: 600,
-                fontSize: "13px",
+                fontWeight: 400,
+                fontSize: "14px",
                 borderRadius: "8px",
                 background: "#a0826d",
                 color: "#fff",

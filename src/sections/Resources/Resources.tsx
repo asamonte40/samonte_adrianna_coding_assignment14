@@ -82,6 +82,7 @@ const Resources = () => {
               width: "350px",
               padding: "1.5rem",
               backgroundColor: "white",
+              border: "2px solid #6d5c4a",
             }}
           >
             <Img
@@ -101,7 +102,7 @@ const Resources = () => {
               color="#4a3f35"
               style={{
                 marginBottom: "1rem",
-                fontWeight: 600,
+                fontWeight: 400,
                 color: "#6d5c4a",
               }}
             >

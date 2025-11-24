@@ -10,8 +10,16 @@ const StyledFooter = styled.tfoot<{ disabled?: boolean }>`
   opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
 `;
 
-const TableFooter: React.FC<TableFooterProps> = ({ children, disabled }) => {
-  return <StyledFooter disabled={disabled}>{children}</StyledFooter>;
+const TableFooter: React.FC<TableFooterProps> = ({
+  children,
+  disabled,
+  style,
+}) => {
+  return (
+    <StyledFooter style={style} disabled={disabled}>
+      {children}
+    </StyledFooter>
+  );
 };
 
 export default TableFooter;

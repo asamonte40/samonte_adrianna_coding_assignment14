@@ -66,6 +66,7 @@ const Work = () => {
               width: "350px",
               padding: "1.5rem",
               backgroundColor: "white",
+              border: "2px solid #6d5c4a",
             }}
           >
             <Img
@@ -93,7 +94,7 @@ const Work = () => {
               style={{
                 marginTop: "0.5rem",
                 color: "#6d5c4a",
-                fontWeight: 600,
+                fontWeight: 400,
                 marginBottom: "1rem",
               }}
             >

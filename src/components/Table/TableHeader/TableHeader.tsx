@@ -14,8 +14,16 @@ const StyledThead = styled.thead<{ disabled?: boolean }>`
   }
 `;
 
-const TableHeader: React.FC<TableHeaderProps> = ({ children, disabled }) => {
-  return <StyledThead disabled={disabled}>{children}</StyledThead>;
+const TableHeader: React.FC<TableHeaderProps> = ({
+  children,
+  disabled,
+  style,
+}) => {
+  return (
+    <StyledThead style={style} disabled={disabled}>
+      {children}
+    </StyledThead>
+  );
 };
 
 export default TableHeader;

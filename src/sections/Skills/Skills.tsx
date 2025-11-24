@@ -72,23 +72,73 @@ const Skills = () => {
       <Text size="large" color="#6d5c4a" style={{ marginBottom: "0.5rem" }}>
         {title}
       </Text>
+
       <Table>
         <TableHeader>
           <TableRow>
-            <TableCell>{skillLabel}</TableCell>
-            <TableCell>{levelLabel}</TableCell>
+            <TableCell
+              style={{
+                border: "2px solid #4a3f35",
+                padding: "10px 16px",
+                backgroundColor: "#a0826d",
+                fontWeight: "600",
+                textAlign: "center",
+                color: " #f4e8deff",
+              }}
+            >
+              {skillLabel}
+            </TableCell>
+            <TableCell
+              style={{
+                border: "2px solid #4a3f35",
+                padding: "10px 16px",
+                backgroundColor: "#a0826d",
+                fontWeight: "600",
+                textAlign: "center",
+                color: " #f4e8deff",
+              }}
+            >
+              {levelLabel}
+            </TableCell>
           </TableRow>
         </TableHeader>
 
         {data.map((item, i) => (
           <TableRow key={i}>
-            <TableCell>{item.skill}</TableCell>
-            <TableCell>{item.level}</TableCell>
+            <TableCell
+              style={{
+                border: "2px solid #4a3f35",
+                fontWeight: "400",
+                color: "#4a3f35",
+              }}
+            >
+              {item.skill}
+            </TableCell>
+            <TableCell
+              style={{
+                border: "2px solid #4a3f35",
+                fontWeight: "400",
+                color: "#4a3f35",
+              }}
+            >
+              {item.level}
+            </TableCell>
           </TableRow>
         ))}
 
         <TableFooter>
-          <TableCell colSpan={2}>Total: {data.length}</TableCell>
+          <TableCell
+            colSpan={2}
+            style={{
+              border: "2px solid #4a3f35",
+              padding: "10px 16px",
+              backgroundColor: "#a0826d",
+              fontWeight: "600",
+              color: " #f4e8deff",
+            }}
+          >
+            Total: {data.length}
+          </TableCell>
         </TableFooter>
       </Table>
     </>
@@ -107,15 +157,27 @@ const Skills = () => {
         Skills
       </Text>
 
-      <Text
-        size="medium"
-        color="#4a3f35"
-        style={{ marginTop: "0.75rem", fontWeight: 600 }}
+      <Card
+        style={{
+          margin: "2rem auto 0",
+          padding: "1.5rem 2rem",
+          width: "800px",
+          backgroundColor: "#fff",
+          border: "2px solid #6d5c4a",
+          borderRadius: "12px",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+        }}
       >
-        These are the skills I've built as a web developer, combining both
-        technical skills with my professional skills to design projects that are
-        efficient, user-friendly, and visually engaging.
-      </Text>
+        <Text
+          size="medium"
+          color="#4a3f35"
+          style={{ fontWeight: 400, textAlign: "center" }}
+        >
+          These are the skills I've built as a web developer, combining both
+          technical skills with my professional skills to design projects that
+          are efficient, user-friendly, and visually engaging.
+        </Text>
+      </Card>
 
       <Card
         style={{
@@ -128,6 +190,7 @@ const Skills = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "flex-start",
+          border: "2px solid #6d5c4a",
         }}
       >
         {selectedTable === "languages" &&
@@ -136,7 +199,6 @@ const Skills = () => {
         {selectedTable === "softSkills" &&
           renderTable("Soft Skills", softSkills, "Skill", "Strength")}
 
-        {/* Styled Radio Buttons */}
         <PrettyRadioWrapper>
           <RadioButton
             name="skills"

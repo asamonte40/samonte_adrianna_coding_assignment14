@@ -12,8 +12,12 @@ const StyledRow = styled.tr<{ disabled?: boolean }>`
   }
 `;
 
-const TableRow: React.FC<TableRowProps> = ({ children, disabled }) => {
-  return <StyledRow disabled={disabled}>{children}</StyledRow>;
+const TableRow: React.FC<TableRowProps> = ({ children, disabled, style }) => {
+  return (
+    <StyledRow style={style} disabled={disabled}>
+      {children}
+    </StyledRow>
+  );
 };
 
 export default TableRow;
