@@ -51,8 +51,8 @@ const BasicInfo = () => {
             style={{ marginTop: "0.75rem", fontWeight: 400 }}
           >
             Currently, I am studying <strong>Full-Stack Web Development</strong>{" "}
-            at <strong>Red River College Polytechnic</strong>, where I’m
-            building a strong skills in both front-end and back-end development.
+            at <strong>Red River College Polytechnic</strong>, where I'm
+            building strong skills in both front-end and back-end development.
           </Text>
           <Text
             size="medium"
