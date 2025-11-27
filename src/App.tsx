@@ -17,7 +17,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import BasicInfo from "./sections/BasicInfo/BasicInfo";
-import Skills from "./sections/Skills/Skills";
+  import Skills from "./sections/Skills/Skills";
 import Work from "./sections/Work/Work";
 import Resources from "./sections/Resources/Resources";
 import DeveloperSetup from "./sections/DevSetup/DevSetup";
